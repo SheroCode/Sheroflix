@@ -1,0 +1,18 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Inception",
+      "category": "Trending",
+      "image": "https://via.placeholder.com/150",
+      "description": "A mind-bending thriller by Christopher Nolan."
+    },
+    {
+      "id": 2,
+      "title": "The Dark Knight",
+      "category": "Top Rated",
+      "image": "https://via.placeholder.com/150",
+      "description": "Batman faces Joker in this masterpiece."
+    }
+  ]
+}
