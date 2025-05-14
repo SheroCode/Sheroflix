@@ -1,2 +1,2 @@
-# Nitflex
+# Netflix
 Netflix Clone project
