@@ -3,19 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netflix</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Netflix landing page</title>
+
     <link
       type="image/png"
       sizes="20x20"
       rel="icon"
-      href="./assets/netflix_favicon.png" />
+      href="./images/logos/logos_netflix-icon.png" />
+    <!-- Use Swiper from CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/utils.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <nav></nav>
-    <main></main>
+    <nav class="navbar">
+      <div class="container">
+        <a href="" class="navbar__logo">
+          <img src="./images/logos/Logo (3).png" alt="" />
+        </a>
+        <ul class="navbar__btns">
+          <li class="navbar__btn">
+            <select name="LanguageSelect" id="">
+              <img src="./images/Buttons/translator icon.png" alt="" />
+              <option lang="en" value="English">English</option>
+              <option lang="ar" value="العربية">العربية</option>
+            </select>
+          </li>
+          <li class="navbar__btn"><a href="./pages/signIn.html">Sign In</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <section id="landing-banner" class="banner">
+        <div class="container">
+          <div class="banner__content">
+            <h1>Unlimited movies, TV shows, and more</h1>
+            <p>Starts at EGP 100. Cancel anytime.</p>
+            <p>
+              Ready to watch? Enter your email to create or restart your
+              membership.
+            </p>
+          </div>
+          <div class="banner__started">
+            <input type="text" class="" placeholder="Email address" />
+            <a href=""
+              >Get Started <img src="./images/Buttons/Polygon 3.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="trending">
+        <div class="container">
+          <h2>Trending Now</h2>
+
+          <div class="trending__moviecards">
+            <!-- start -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <!-- <div class="swiper-slide">
+                  <img src="./images/top10/top1.png" alt="" />
+                </div> -->
+              
+           
+              
+              </div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+
+              <!-- If we need scrollbar -->
+              <div class="swiper-scrollbar"></div>
+            </div>
+            <!-- end -->
+          </div>
+        </div>
+      </section>
+    </main>
     <footer></footer>
 
+    <!-- Use Swiper from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="app.js"></script>
   </body>
 </html>
