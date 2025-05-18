@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Netflix landing page</title>
-
+    <link rel="stylesheet" href="path/to/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="path/to/your-custom-style.css" />
     <link
       type="image/png"
       sizes="20x20"
@@ -23,17 +24,17 @@
       <div class="container">
         <div class="row">
           <a href="" class="navbar__logo">
-            <img src="./assets/images/logos/Logo (3).png" alt="" />
+            <img src="./assets/images/logos/Logo (3).png" alt="Netflix Logo" />
           </a>
           <ul class="navbar__btns flex">
             <li class="navbar__btn">
-              <select name="LanguageSelect" id="">
+              <select name="LanguageSelect" class="lang-select" id="">
                 <!-- <img src="./assets/images/Buttons/translator icon.png" alt="" /> -->
                 <option lang="en" value="English">English</option>
                 <option lang="ar" value="العربية">العربية</option>
               </select>
             </li>
-            <li class="navbar__btn ">
+            <li class="navbar__btn">
               <a class="primary-btn" href="./pages/signIn.html">Sign In</a>
             </li>
           </ul>
@@ -47,18 +48,21 @@
         <div class="container">
           <div class="banner__content">
             <h1>Unlimited movies, TV shows, and more</h1>
-            <p class="banner__paragraph" >Starts at EGP 100. Cancel anytime.</h>
+            <p class="banner__paragraph">Starts at EGP 100. Cancel anytime.</p>
             <h4>
               Ready to watch? Enter your email to create or restart your
               membership.
             </h4>
-          </div>
-          <div class="banner__started">
-            <input type="text" class="" placeholder="Email address" />
-            <a href="" class="secondary-btn"
-              >Get Started
-              <img src="./assets/images/Buttons/Polygon 3.png" alt=""
-            /></a>
+            <div class="banner__started flex">
+              <input
+                type="text"
+                class="started__input"
+                placeholder="Email address" />
+              <a href="" class="secondary-btn"
+                >Get Started
+                <img src="./assets/images/Buttons/Polygon 3.png" alt=""
+              /></a>
+            </div>
           </div>
         </div>
       </section>
@@ -72,8 +76,8 @@
               <div class="swiper-wrapper"></div>
 
               <!-- If we need navigation buttons -->
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev custom-prev"></div>
+              <div class="swiper-button-next custom-next"></div>
 
               <!-- If we need scrollbar -->
               <div class="swiper-scrollbar"></div>
@@ -122,7 +126,7 @@
     <!--landing page footer -->
     <footer class="footer">
       <div class="container">
-        <p><a href="#">Questions? Contact us.</a></p>
+        <p class="footer__questions"><a href="#">Questions? Contact us.</a></p>
 
         <div class="footer__links flex">
           <ul class="footer__ul">
@@ -151,7 +155,7 @@
         </div>
 
         <div class="language-selector">
-          <select>
+          <select class="lang-select">
             <option>English</option>
             <option>العربية</option>
           </select>
