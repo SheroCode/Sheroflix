@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Color variables palette */
+
+:root {
+  --PRIMARY_BLACK: #000000;
+  --PRIMARY_RED: #e50914;
+  --PRIMARY_WHITE: #ffffff;
+  --SECONDARY_RED_100: #eb3942;
+  --SECONDARY_RED_200: #c11119;
+  --SECONDARY_RED_300: #f50723;
+  --SECONDARY_BLUE_100: #0071eb;
+  --SECONDARY_BLUE_200: #448ef4;
+  --SECONDARY_BLUE_300: #54b9c5;
+  --SECONDARY_GREEN: #46d369;
+  --GREY_GREY_10: #e5e5e5;
+  --GREY_GREY_20: #dcdcdc;
+  --GREY_GREY_25: #d2d2d2;
+  --GREY_GREY_50: #bcbcbc;
+  --GREY_GREY_100: #b3b3b3;
+  --GREY_GREY_150: #979797;
+  --GREY_GREY_200: #808080;
+  --GREY_GREY_250: #777777;
+  --GREY_GREY_300_T70: #6d6d6eb3;
+  --GREY_GREY_300_T40: #6d6d6e66;
+  --GREY_GREY_350: #545454;
+  --GREY_GREY_400: #414141;
+  --GREY_GREY_450: #404040;
+  --GREY_GREY_500: #3a3a3a;
+  --GREY_GREY_550: #363636;
+  --GREY_GREY_600: #333333;
+  --GREY_GREY_600_T60: #33333399;
+  --GREY_GREY_650: #2f2f2f;
+  --GREY_GREY_700: #2a2a2a;
+  --GREY_GREY_750: #262626;
+  --GREY_GREY_800: #232323;
+  --GREY_GREY_850: #181818;
+  --GREY_GREY_900: #141414;
+  --TRANSPARENT_WHITE_15: #ffffff26;
+  --TRANSPARENT_WHITE_20: #ffffff33;
+  --TRANSPARENT_WHITE_30: #ffffff4d;
+  --TRANSPARENT_WHITE_35: #ffffff59;
+  --TRANSPARENT_WHITE_50: #ffffff80;
+  --TRANSPARENT_WHITE_70: #ffffffb3;
+  --TRANSPARENT_BLACK_30: #0000004d;
+  --TRANSPARENT_BLACK_90: #000000e6;
+  --TRANSPARENT_BLACK_60: #00000099;
+}
+
+/* Utils classes */
+
+.primary-btn {
+  color: var(--PRIMARY_RED);
+  color: #fff;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+/* Class style */
+.container {
+  width: 80%;
+  max-width: 1420px;
+  margin: auto;
+}
+
+/* Elements style */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+    sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  color: #ffffffb3;
+  font-size: 1rem;
+  font-weight: 400;
+}
+a {
+  color: #b3b3b3;
+}

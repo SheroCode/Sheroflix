@@ -1,12 +1,10 @@
 /* start banner section */
-#home-banner{
-    background-image: url(../images/banner/HomePage.png);
+#home-banner {
+  background-image: url(../images/banner/HomePage.png);
 }
-#landing-banner{
-    background-image: url(../images/banner/LandingPage.png);
+#landing-banner {
+  background-image: url(../images/banner/LandingPage.png);
 }
-
-
 
 /* end banner section */
 
@@ -15,10 +13,10 @@
 .swiper-slide {
   display: flex;
   justify-content: center; /* centers image horizontally */
-  align-items: center;     /* centers image vertically */
+  align-items: center; /* centers image vertically */
 }
 .swiper-slide img {
-    width: 200px;
+  width: 200px;
   /* max-width: 65%; */
   height: auto;
   display: block;
@@ -26,3 +24,6 @@
 }
 
 /* End trending section */
+
+/* start footer */
+
