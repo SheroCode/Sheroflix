@@ -21,19 +21,23 @@
     <!-- Nav bar -->
     <nav class="navbar">
       <div class="container">
-        <a href="" class="navbar__logo">
-          <img src="./assets/images/logos/Logo (3).png" alt="" />
-        </a>
-        <ul class="navbar__btns">
-          <li class="navbar__btn">
-            <select name="LanguageSelect" id="">
-              <!-- <img src="./assets/images/Buttons/translator icon.png" alt="" /> -->
-              <option lang="en" value="English">English</option>
-              <option lang="ar" value="العربية">العربية</option>
-            </select>
-          </li>
-          <li class="navbar__btn"><a href="./pages/signIn.html">Sign In</a></li>
-        </ul>
+        <div class="row">
+          <a href="" class="navbar__logo">
+            <img src="./assets/images/logos/Logo (3).png" alt="" />
+          </a>
+          <ul class="navbar__btns flex">
+            <li class="navbar__btn">
+              <select name="LanguageSelect" id="">
+                <!-- <img src="./assets/images/Buttons/translator icon.png" alt="" /> -->
+                <option lang="en" value="English">English</option>
+                <option lang="ar" value="العربية">العربية</option>
+              </select>
+            </li>
+            <li class="navbar__btn ">
+              <a class="primary-btn" href="./pages/signIn.html">Sign In</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
@@ -43,15 +47,15 @@
         <div class="container">
           <div class="banner__content">
             <h1>Unlimited movies, TV shows, and more</h1>
-            <p>Starts at EGP 100. Cancel anytime.</p>
-            <p>
+            <p class="banner__paragraph" >Starts at EGP 100. Cancel anytime.</h>
+            <h4>
               Ready to watch? Enter your email to create or restart your
               membership.
-            </p>
+            </h4>
           </div>
           <div class="banner__started">
             <input type="text" class="" placeholder="Email address" />
-            <a href=""
+            <a href="" class="secondary-btn"
               >Get Started
               <img src="./assets/images/Buttons/Polygon 3.png" alt=""
             /></a>

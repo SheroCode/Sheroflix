@@ -51,15 +51,50 @@
   --TRANSPARENT_BLACK_30: #0000004d;
   --TRANSPARENT_BLACK_90: #000000e6;
   --TRANSPARENT_BLACK_60: #00000099;
+  font-size: 16px;
 }
 
 /* Utils classes */
 
 .primary-btn {
-  color: var(--PRIMARY_RED);
-  color: #fff;
+  background-color: var(--PRIMARY_RED);
+  color: var(--PRIMARY_WHITE);
+  font-size: 0.875rem;
+  font-weight: 500;
+  min-height: 2rem;
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+}
+.primary-btn:hover {
+  background-color: var(--SECONDARY_RED_100);
 }
 
+.secondary-btn {
+  background-color: var(--PRIMARY_RED);
+  color: var(--PRIMARY_WHITE);
+  font-size: 1.5rem;
+  font-weight: 500;
+  min-height: 3.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+}
+.secondary-btn:hover {
+  background-color: var(--SECONDARY_RED_100);
+}
+.tertiary-btn {
+  color: var(--PRIMARY_WHITE);
+  background-color: var(--GREY_GREY_300_T70);
+}
+.tertiary-btn :hover {
+  background-color: var(--GREY_GREY_300_T40);
+}
+.play-btn {
+  color: var(--PRIMARY_BLACK);
+  background-color: var(--PRIMARY_WHITE);
+}
+.play-btn:hover {
+  background-color: var(--GREY_GREY_10);
+}
 .flex {
   display: flex;
   justify-content: space-between;
@@ -70,6 +105,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
 /* Class style */
 .container {
   width: 80%;
@@ -79,8 +115,8 @@
 
 /* Elements style */
 body {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--PRIMARY_BLACK);
+  color: var(--PRIMARY_WHITE);
   font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
     sans-serif;
 }
@@ -90,10 +126,38 @@ ul {
 }
 
 p {
-  color: #ffffffb3;
+  color: var(--TRANSPARENT_WHITE_70);
   font-size: 1rem;
   font-weight: 400;
 }
-a {
-  color: #b3b3b3;
+ a {
+  text-decoration: none;
+  cursor: pointer;
 }
+h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 70px;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+h4 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+input{
+  background-color :#00000000;
+  color :#ffffff;
+  padding:1.5rem 1rem .5rem ;
+
+}
+/* img{
+  width: 100%;
+} */
