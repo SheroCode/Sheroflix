@@ -6,19 +6,24 @@
   margin: 0;
 }
 
-/* Color variables palette */
-
+/* ======================
+   Color Variables Palette
+   ====================== */
 :root {
   --PRIMARY_BLACK: #000000;
   --PRIMARY_RED: #e50914;
   --PRIMARY_WHITE: #ffffff;
+
   --SECONDARY_RED_100: #eb3942;
   --SECONDARY_RED_200: #c11119;
   --SECONDARY_RED_300: #f50723;
+
   --SECONDARY_BLUE_100: #0071eb;
   --SECONDARY_BLUE_200: #448ef4;
   --SECONDARY_BLUE_300: #54b9c5;
+
   --SECONDARY_GREEN: #46d369;
+
   --GREY_GREY_10: #e5e5e5;
   --GREY_GREY_20: #dcdcdc;
   --GREY_GREY_25: #d2d2d2;
@@ -42,20 +47,24 @@
   --GREY_GREY_800: #232323;
   --GREY_GREY_850: #181818;
   --GREY_GREY_900: #141414;
+
   --TRANSPARENT_WHITE_15: #ffffff26;
   --TRANSPARENT_WHITE_20: #ffffff33;
   --TRANSPARENT_WHITE_30: #ffffff4d;
   --TRANSPARENT_WHITE_35: #ffffff59;
   --TRANSPARENT_WHITE_50: #ffffff80;
   --TRANSPARENT_WHITE_70: #ffffffb3;
+
   --TRANSPARENT_BLACK_30: #0000004d;
-  --TRANSPARENT_BLACK_90: #000000e6;
   --TRANSPARENT_BLACK_60: #00000099;
+  --TRANSPARENT_BLACK_90: #000000e6;
+
   font-size: 16px;
 }
 
-/* Utils classes */
-
+/* ====================
+   Utility Classes
+   ==================== */
 .primary-btn {
   background-color: var(--PRIMARY_RED);
   color: var(--PRIMARY_WHITE);
@@ -64,9 +73,10 @@
   min-height: 2rem;
   padding: 0.25rem 1rem;
   border-radius: 0.25rem;
+  transition: ease 0.2s;
 }
 .primary-btn:hover {
-  background-color: var(--SECONDARY_RED_100);
+  background-color: var(--SECONDARY_RED_200);
 }
 
 .secondary-btn {
@@ -75,45 +85,86 @@
   font-size: 1.5rem;
   font-weight: 500;
   min-height: 3.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.25rem;
   border-radius: 0.25rem;
+  transition: ease 0.2s;
 }
 .secondary-btn:hover {
-  background-color: var(--SECONDARY_RED_100);
+  background-color: var(--SECONDARY_RED_200);
 }
-.tertiary-btn {
-  color: var(--PRIMARY_WHITE);
-  background-color: var(--GREY_GREY_300_T70);
-}
-.tertiary-btn :hover {
-  background-color: var(--GREY_GREY_300_T40);
-}
+
 .play-btn {
   color: var(--PRIMARY_BLACK);
   background-color: var(--PRIMARY_WHITE);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 10px 20px;
+  gap: 8px;
 }
 .play-btn:hover {
   background-color: var(--GREY_GREY_10);
 }
+.info-btn {
+  color: var(--PRIMARY_WHITE);
+  background-color: var(--GREY_GREY_300_T70);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 10px 20px;
+  gap: 8px;
+}
+.info-btn:hover {
+  background-color: var(--GREY_GREY_300_T40);
+}
+.signin-btn {
+  padding: 16px;
+  background: #e50914;
+  border-radius: 0.25rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: ease 0.2s;
+}
+.signin-btn:hover {
+  background-color: var(--SECONDARY_RED_200);
+}
 .flex {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-/* Class style */
+/* ====================
+   Layout Classes
+   ==================== */
 .container {
   width: 80%;
   max-width: 1420px;
   margin: auto;
 }
 
-/* Elements style */
+.lang-select {
+  background-color: #00000000;
+  color: var(--PRIMARY_WHITE);
+  border-radius: 0.25rem;
+  padding: 4px 32px 6px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+/* ====================
+   Element Styles
+   ==================== */
 body {
   background-color: var(--PRIMARY_BLACK);
   color: var(--PRIMARY_WHITE);
@@ -130,34 +181,62 @@ p {
   font-size: 1rem;
   font-weight: 400;
 }
- a {
+
+a {
   text-decoration: none;
   cursor: pointer;
 }
+
 h1 {
   font-size: 3.5rem;
   font-weight: 900;
   line-height: 70px;
   margin-bottom: 1rem;
 }
+
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
+  margin-bottom: 1.25rem;
+  margin-bottom: 2rem;
 }
+
 h3 {
   font-size: 1.5rem;
   font-weight: 500;
+  margin-bottom: 1.25rem;
 }
+
 h4 {
   font-size: 1rem;
   font-weight: 400;
 }
-input{
-  background-color :#00000000;
-  color :#ffffff;
-  padding:1.5rem 1rem .5rem ;
 
+input {
+  background-color: #00000000;
+  color: #ffffff;
+  padding: 1rem;
+  border: solid 1px var(--GREY_GREY_100);
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  font-size: 1rem;
 }
-/* img{
+
+section {
+  padding-top: 4rem;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+/* img {
   width: 100%;
 } */
+.hidden {
+  display: none;
+}
+.block {
+  display: block;
+}

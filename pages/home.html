@@ -9,24 +9,60 @@
       sizes="20x20"
       rel="icon"
       href="../assets/images/logos/logos_netflix-icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../assets/css/global.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
-    <nav class="navbar">
+    <!-- Overlay Div -->
+    <div class="overlay hidden">
+      <div class="details">
+        <figure class="details__image">
+          <img src="" alt="" />
+          <button class="close-btn">
+            <img src="../assets/images/Buttons/close.png" alt="" />
+          </button>
+        </figure>
+        <div class="details__overview">
+          <div class="details__info">
+            <h3 class="details__type"></h3>
+            <h3 class="details__date"></h3>
+            <button class="plus-btn">
+              <img
+                src="../assets/images/Buttons/Plus.png"
+                alt=""
+                title="Add to list" />
+            </button>
+          </div>
+          <p class="details__description"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav bar -->
+    <nav class="navbar home-navbar">
       <div class="container">
-        <a class="navbar__logo" href="">
-          <img src="../assets/images/logos/Logo (3).png" alt="" />
-        </a>
-        <div class="navbar__uls">
-          <ul class="navbar__ul">
-            <li class="navbar__btn"><a href="./pages/home.html">Home</a></li>
-            <li class="navbar__btn"><a href="">Movies</a></li>
-            <li class="navbar__btn"><a href="">My List</a></li>
+        <div class="row">
+          <ul class="navbar__links flex">
+            <li class="navbar__logo">
+              <a href="./pages/home.html">
+                <img
+                  src="../assets/images/logos/small-logo.png"
+                  alt="Netflix Logo" />
+              </a>
+            </li>
+            <li class="navbar__link"><a href="./pages/home.html">Home</a></li>
+            <li class="navbar__link"><a href="">TV Shows</a></li>
+            <li class="navbar__link"><a href="">Movies</a></li>
+            <li class="navbar__link"><a href="">My List</a></li>
           </ul>
-          <ul class="navbar__ul">
-            <li><img src="../assets/images/Buttons/Search.png" alt="" /></li>
-            <li>
+          <ul class="navbar__icons flex">
+            <li class="navbar__search">
+              <img src="../assets/images/Buttons/Search.png" alt="" />
+            </li>
+            <li class="navbar__notification">
               <img src="../assets/images/Buttons/Notification.png" alt="" />
             </li>
           </ul>
@@ -34,27 +70,138 @@
       </div>
     </nav>
     <main>
-      <section id="home-banner" class="banner">
+      <!-- hero section -->
+      <section id="home-hero" class="hero">
         <div class="container">
-          <figure>
-            <img src="../assets/images/banner/house of ninjas.png" alt="" />
-          </figure>
-          <p>
-            Years after retiring from their formidable ninja lives, a
-            dysfunctional family must return to shadowy missions to counteract a
-            string of looming threats.
-          </p>
-          <div class="banner__btns">
-            <a href="" class="banner__btn"
-              ><img src="../assets/images/Buttons/Polygon 1.png" alt="" />Play</a
-            >
-            <a href="" class="banner__btn"
-              ><img src="../assets/images/Buttons/Info.png" alt="" />More Info</a
-            >
+          <div class="hero__contents">
+            <figure class="hero__image">
+              <img src="../assets/images/banner/house of ninjas.png" alt="" />
+            </figure>
+            <p class="hero__paragraph">
+              Years after retiring from their formidable ninja lives, a
+              dysfunctional family must return to shadowy missions to counteract
+              a string of looming threats.
+            </p>
+            <div class="hero__btns">
+              <a href="" class="hero__btn play-btn flex"
+                ><img
+                  src="../assets/images/Buttons/Polygon 1.png"
+                  alt="" />Play</a
+              >
+              <a href="" class="hero__btn info-btn flex"
+                ><img src="../assets/images/Buttons/Info.png" alt="" />More
+                Info</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trending Section -->
+      <section class="trending">
+        <div class="container">
+          <h2>Trending Now</h2>
+          <div class="trending__moviecards">
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div id="trending" class="swiper-wrapper"></div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev custom-prev"></div>
+              <div class="swiper-button-next custom-next"></div>
+
+              <!-- If we need scrollbar -->
+              <div class="swiper-scrollbar"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--TV Shows-->
+      <section class="tv-shows">
+        <div class="container">
+          <h2>TV Shows</h2>
+          <div class="tv-shows__moviecards">
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div id="tv" class="swiper-wrapper"></div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev custom-prev"></div>
+              <div class="swiper-button-next custom-next"></div>
+
+              <!-- If we need scrollbar -->
+              <div class="swiper-scrollbar"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Movies-->
+      <section class="movies">
+        <div class="container">
+          <h2>Movies</h2>
+          <div class="movies__moviecards">
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div id="movie" class="swiper-wrapper"></div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev custom-prev"></div>
+              <div class="swiper-button-next custom-next"></div>
+
+              <!-- If we need scrollbar -->
+              <div class="swiper-scrollbar"></div>
+            </div>
           </div>
         </div>
       </section>
     </main>
-    <footer></footer>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="footer__questions"><a href="#">Questions? Contact us.</a></p>
+
+        <div class="footer__links flex">
+          <ul class="footer__ul">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Investor Relations</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Speed Test</a></li>
+          </ul>
+          <ul class="footer__ul">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Cookie Preferences</a></li>
+            <li><a href="#">Legal Notices</a></li>
+          </ul>
+          <ul class="footer__ul">
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Ways to Watch</a></li>
+            <li><a href="#">Corporate Information</a></li>
+            <li><a href="#">Only on Netflix</a></li>
+          </ul>
+          <ul class="footer__ul">
+            <li><a href="#">Media Center</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="language-selector">
+          <select class="lang-select">
+            <option>English</option>
+            <option>العربية</option>
+          </select>
+        </div>
+
+        <p class="footer-note">
+          This page is protected by Google reCAPTCHA to ensure you're not a bot.
+          <a href="#">Learn more.</a>
+        </p>
+      </div>
+    </footer>
+    <!-- Use Swiper from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="../assets/js/app.js"></script>
   </body>
 </html>

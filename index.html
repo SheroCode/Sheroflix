@@ -19,6 +19,30 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+        <!-- Overlay Div -->
+    <div class="overlay hidden">
+      <div class="details">
+        <figure class="details__image">
+          <img src="" alt="" />
+          <button class="close-btn">
+            <img src="../assets/images/Buttons/close.png" alt="" />
+          </button>
+        </figure>
+        <div class="details__overview">
+          <div class="details__info">
+            <h3 class="details__type"></h3>
+            <h3 class="details__date"></h3>
+            <button class="plus-btn">
+              <img
+                src="../assets/images/Buttons/Plus.png"
+                alt=""
+                title="Add to list" />
+            </button>
+          </div>
+          <p class="details__description"></p>
+        </div>
+      </div>
+    </div>
     <!-- Nav bar -->
     <nav class="navbar">
       <div class="container">
@@ -73,7 +97,7 @@
           <div class="trending__moviecards">
             <div class="swiper">
               <!-- Additional required wrapper -->
-              <div class="swiper-wrapper"></div>
+              <div id="trending" class="swiper-wrapper"></div>
 
               <!-- If we need navigation buttons -->
               <div class="swiper-button-prev custom-prev"></div>

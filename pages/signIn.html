@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Sign In</title>
+    <link rel="stylesheet" href="path/to/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="path/to/your-custom-style.css" />
+    <!-- favicon -->
+    <link
+      type="image/png"
+      sizes="20x20"
+      rel="icon"
+      href="../assets//images/logos/logos_netflix-icon.png" />
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Nav bar -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="../index.html">
+          <img
+            src="../assets/images/logos/Logo (3).png"
+            alt="Netflix Logo"
+            class="logo" />
+        </a>
+      </div>
+    </nav>
+    <!-- Form section -->
+    <main>
+      <section class="signin">
+        <div class="container">
+          <div class="form-wrapper">
+            <h2 class="form__header">Sign In</h2>
+            <form>
+              <div class="form__input">
+                <input
+                  type="email"
+                  required
+                  placeholder="Email or phone number" />
+              </div>
+              <div class="form__input">
+                <input type="password" required placeholder="Password" />
+              </div>
+              <button class="signin-btn" type="submit">Sign In</button>
+              <div class="form-help">
+                <div class="remember-me">
+                  <input type="checkbox" id="remember-me" />
+                  <label for="remember-me">Remember me</label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="footer__questions"><a href="#">Questions? Contact us.</a></p>
+
+        <div class="footer__links flex">
+          <ul class="footer__ul">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Cookie Preferences</a></li>
+          </ul>
+          <ul class="footer__ul">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Corporate Information</a></li>
+          </ul>
+          <ul class="footer__ul">
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+          <ul class="footer__ul">
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="language-selector">
+          <select class="lang-select">
+            <option>English</option>
+            <option>العربية</option>
+          </select>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./assets/js/app.js"></script>
+  </body>
+</html>

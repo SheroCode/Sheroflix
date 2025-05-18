@@ -1,35 +1,302 @@
-/* start banner section */
-#home-banner {
-  background-image: url(../images/banner/HomePage.png);
+/************ Landing Page Styles ************/
+/* ========== Overlay Div ========== */
+.overlay {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--TRANSPARENT_BLACK_90);
+  
 }
+.details {
+  width: 50%;
+  max-width: 500px;
+  min-width: 400px;
+  border-radius: 1rem;
+  margin: 8rem auto  20rem;
+  background-color: var(--GREY_GREY_350);
+}
+.details__overview {
+  padding: 2rem 1.5rem;
+}
+.details__info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 2rem;
+}
+.details__info h3 {
+  margin: 0;
+}
+.details__image img {
+  width: 100%;
+  position: relative;
+}
+
+.details__description {
+  margin: auto;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.details__image {
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: auto;
+  padding: 1.5rem 0;
+  z-index: 1;
+}
+.navbar__btns {
+  gap: 10px;
+}
+
+/* ========== Banner Section ========== */
+#home-hero {
+  background-image: url(../images/banner/HomePage.png);
+  background-size: cover;
+  background-position: center;
+}
+
 #landing-banner {
   background-image: url(../images/banner/LandingPage.png);
+  background-size: cover;
+  background-position: center;
 }
 
-/* end banner section */
-.banner__paragraph{
-  font-size:1.25rem;
+.banner {
+  padding: 11rem 0;
+  text-align: center;
+}
+
+.banner__content {
+  width: 51.1%;
+  margin: 0 auto;
+}
+
+.banner__paragraph {
+  font-size: 1.25rem;
   margin-bottom: 2rem;
-  color:var(--PRIMARY_WHITE);
+  color: var(--PRIMARY_WHITE);
   font-weight: 500;
-
 }
-/* Start trending section */
+
+.banner__started {
+  padding: 1rem;
+}
+
+.started__input {
+  width: 66.5%;
+}
+
+/* ========== Trending Section ========== */
+.trending {
+  padding-bottom: 5rem;
+}
 
 .swiper-slide {
   display: flex;
-  justify-content: center; /* centers image horizontally */
-  align-items: center; /* centers image vertically */
+  justify-content: center;
+  align-items: center;
+
+ width: 200px;
 }
+
 .swiper-slide img {
-  width: 200px;
-  /* max-width: 65%; */
+  width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
-/* End trending section */
+.custom-prev,
+.custom-next {
+  color: var(--TRANSPARENT_WHITE_70);
+  background-color: var(--TRANSPARENT_WHITE_15);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
 
-/* start footer */
+/* ========== Reasons Section ========== */
+.reasons {
+  padding: 3rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
 
+.reasons__item {
+  width: 24%;
+  height: 17rem;
+  padding: 1.5rem 1rem 6rem;
+  background-color: var(--TRANSPARENT_WHITE_15);
+  border-radius: 0.75rem;
+}
+
+/* ========== Footer Section ========== */
+.footer {
+  padding: 3rem 0 6rem 0;
+}
+
+.footer__ul li {
+  margin: 0.5rem 0;
+  color: var(--TRANSPARENT_WHITE_15);
+}
+
+.footer__ul li a {
+  color: var(--TRANSPARENT_WHITE_70);
+}
+
+.footer__questions {
+  margin-bottom: 1.5rem;
+}
+
+.footer__questions a {
+  color: var(--TRANSPARENT_WHITE_70);
+}
+
+.language-selector {
+  margin: 4rem 0;
+}
+
+.footer-note a {
+  color: var(--SECONDARY_BLUE_100);
+}
+
+/************ End of Landing Page Styles ************/
+/************ Strat of Home Page Styles ************/
+/* ========== Navbar ========== */
+.home-navbar {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.navbar__link a {
+  color: var(--TRANSPARENT_WHITE_70);
+  font-weight: 600;
+}
+.navbar__link:hover a {
+  color: var(--PRIMARY_WHITE);
+}
+.navbar__links {
+  width: 50%;
+}
+.navbar__logo {
+  margin-right: 5px;
+}
+
+.navbar__icons {
+  width: 8%;
+}
+
+/* ========== Hero Section========== */
+.hero {
+  padding: 11rem 0;
+}
+.hero__contents {
+  width: 50%;
+}
+.hero__paragraph {
+  margin: 2rem 0;
+}
+.hero__btns {
+  display: flex;
+  gap: 1rem;
+}
+.hero__btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/************ End of Home Page Styles ************/
+/************ Start of Sign in Page Styles ************/
+
+.signin {
+  background-image: url(../images/banner/HomePage.png);
+  background-size: cover;
+  background-position: center;
+  padding: 10rem 0;
+}
+
+/* Form wrapper */
+.form-wrapper {
+  background: var(--TRANSPARENT_BLACK_60);
+  width: 42%;
+  margin: auto;
+  padding: 3rem;
+  border-radius: 4px;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+.form__header {
+  margin-bottom: 28px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.form-control input:focus {
+  left: 12px;
+  top: 4px;
+  font-size: 0.8rem;
+  color: #b3b3b3;
+}
+
+.signin-btn,
+.form__input input {
+  width: 100%;
+  font-size: 1rem;
+}
+.form__input,
+.signin-btn {
+  margin-bottom: 1rem;
+}
+.form-help a {
+  color: #b3b3b3;
+  text-decoration: none;
+}
+.signup {
+  color: #737373;
+  margin-top: 28px;
+}
+.signup a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 5px;
+}
+.signup a:hover {
+  text-decoration: underline;
+}
+/************ End of Sgin in Page Styles ************/
+/* ========== Responsive (Mobile) ========== */
+/* @media (max-width: 768px) {
+  .banner__content {
+    width: 90%;
+  }
+
+  .started__input {
+    width: 100%;
+  }
+
+  .reasons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reasons__item {
+    width: 90%;
+  }
+} */
