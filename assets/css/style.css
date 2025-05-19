@@ -8,14 +8,13 @@
   height: 100%;
   width: 100%;
   background-color: var(--TRANSPARENT_BLACK_90);
-  
 }
 .details {
   width: 50%;
   max-width: 500px;
   min-width: 400px;
   border-radius: 1rem;
-  margin: 8rem auto  20rem;
+  margin: 8rem auto 20rem;
   background-color: var(--GREY_GREY_350);
 }
 .details__overview {
@@ -61,6 +60,9 @@
 .navbar__btns {
   gap: 10px;
 }
+select option {
+  color: var(--PRIMARY_BLACK);
+}
 
 /* ========== Banner Section ========== */
 #home-hero {
@@ -93,11 +95,12 @@
 }
 
 .banner__started {
-  padding: 1rem;
+  margin-top: 1rem;
+  gap: 10px;
 }
 
 .started__input {
-  width: 66.5%;
+  width: 67.5%;
 }
 
 /* ========== Trending Section ========== */
@@ -109,8 +112,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
- width: 200px;
+  width: 200px;
 }
 
 .swiper-slide img {
