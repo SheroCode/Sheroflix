@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netflix TV Shows</title>
+    <title>Netflix movies</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
     <link
       type="image/png"
       sizes="20x20"
@@ -42,7 +48,7 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar home-navbar">
+ <nav class="navbar home-navbar">
       <div class="container">
         <div class="row">
           <ul class="navbar__links flex">
@@ -54,27 +60,25 @@
               </a>
             </li>
             <li class="navbar__link"><a href="./home.html">Home</a></li>
-            <li class="navbar__link">
-              <a href="./tvshows.html">TV Shows</a>
-            </li>
-            <li class="navbar__link">
-              <a href="./movies.html">Movies</a>
-            </li>
-            <li class="navbar__link">
-              <a href="./mylist.html">My List</a>
-            </li>
+            <li class="navbar__link"><a href="./tvshows.html">TV Shows</a></li>
+            <li class="navbar__link"><a href="./movies.html">Movies</a></li>
+            <li class="navbar__link"><a href="./mylist.html">My List</a></li>
           </ul>
-          <ul class="navbar__icons flex">
-            <li class="navbar__search">
-              <img src="../assets/images/Buttons/Search.png" alt="" />
+          <ul class="navbar__icons">
+            <li class="navbar__search flex">
+              <input type="text" id="search-input" placeholder="Search..." />
+              <i class="fa-solid fa-magnifying-glass fa-lg" id="search-icon"></i>
             </li>
             <li class="navbar__notification">
-              <img src="../assets/images/Buttons/Notification.png" alt="" />
+              <i class="fa-regular fa-bell fa-lg"></i>
+            </li>
+            <li class="navbar__logout">
+              <button id="logout-btn" class="info-btn">log out</button>
             </li>
           </ul>
         </div>
       </div>
-    </nav>
+    </nav>  
     <!-- Main Content -->
 
     <main>
@@ -132,6 +136,6 @@
     <!-- Use Swiper from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../assets/js/tvshows.js"></script>
-    <!-- <script type="module" src="../assets/js/app.js"></script> -->
+    <script type="module" src="../assets/js/app.js"></script>
   </body>
 </html>

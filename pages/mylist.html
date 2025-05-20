@@ -43,33 +43,37 @@
     </div>
 
     <!-- Nav bar -->
-    <nav class="navbar home-navbar">
+   <nav class="navbar home-navbar">
       <div class="container">
         <div class="row">
           <ul class="navbar__links flex">
             <li class="navbar__logo">
-              <a href="./pages/home.html">
+              <a href="./home.html">
                 <img
                   src="../assets/images/logos/small-logo.png"
                   alt="Netflix Logo" />
               </a>
             </li>
-            <li class="navbar__link"><a href="home.html">Home</a></li>
-            <li class="navbar__link"><a href="tvshows.html">TV Shows</a></li>
-            <li class="navbar__link"><a href="movies.html">Movies</a></li>
-            <li class="navbar__link"><a href="mylist.html">My List</a></li>
+            <li class="navbar__link"><a href="./home.html">Home</a></li>
+            <li class="navbar__link"><a href="./tvshows.html">TV Shows</a></li>
+            <li class="navbar__link"><a href="./movies.html">Movies</a></li>
+            <li class="navbar__link"><a href="./mylist.html">My List</a></li>
           </ul>
-          <ul class="navbar__icons flex">
-            <li class="navbar__search">
-              <img src="../assets/images/Buttons/Search.png" alt="" />
+          <ul class="navbar__icons">
+            <li class="navbar__search flex">
+              <input type="text" id="search-input" placeholder="Search..." />
+              <i class="fa-solid fa-magnifying-glass fa-lg" id="search-icon"></i>
             </li>
             <li class="navbar__notification">
-              <img src="../assets/images/Buttons/Notification.png" alt="" />
+              <i class="fa-regular fa-bell fa-lg"></i>
+            </li>
+            <li class="navbar__logout">
+              <button id="logout-btn" class="info-btn">log out</button>
             </li>
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> 
     <main>
       <!-- hero section -->
       <section id="home-hero" class="hero">

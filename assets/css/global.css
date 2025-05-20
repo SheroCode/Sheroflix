@@ -237,6 +237,9 @@ button {
 /* img {
   width: 100%;
 } */
+ select option {
+  color: var(--PRIMARY_BLACK);
+}
 .hidden {
   display: none;
 }

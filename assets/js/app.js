@@ -32,82 +32,92 @@ function initSwiper() {
     },
   });
 }
-// fetch of trending movies
-fetch("https://api.themoviedb.org/3/trending/movie/day?language=en-US", options)
-  .then((res) => res.json())
-  //object destruction
-  .then(({ results }) => {
-    displaytrending(results);
-    initSwiper();
-  })
-  .catch((err) => console.error(err));
+if (trendingWrapper) {
+  // fetch of trending movies
+  fetch(
+    "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
+    options
+  )
+    .then((res) => res.json())
+    //object destruction
+    .then(({ results }) => {
+      displaytrending(results);
+      initSwiper();
+    })
+    .catch((err) => console.error(err));
 
-function displaytrending(list) {
-  list.forEach((ele) => {
-    let swiperSlide = document.createElement("div");
-    let img = document.createElement("img");
-    swiperSlide.className = "swiper-slide";
-    img.src = `https://image.tmdb.org/t/p/original${ele.poster_path}`;
-    img.alt = "Movie Poster";
-    img.addEventListener("click", function () {
-      showDetails(ele);
+  function displaytrending(list) {
+    list.forEach((ele) => {
+      let swiperSlide = document.createElement("div");
+      let img = document.createElement("img");
+      swiperSlide.className = "swiper-slide";
+      img.src = `https://image.tmdb.org/t/p/original${ele.poster_path}`;
+      img.alt = "Movie Poster";
+      img.addEventListener("click", function () {
+        showDetails(ele);
+      });
+      swiperSlide.appendChild(img);
+      trendingWrapper.appendChild(swiperSlide);
     });
-    swiperSlide.appendChild(img);
-    trendingWrapper.appendChild(swiperSlide);
-  });
+  }
 }
 // fetch   movies
-fetch(
-  "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
-  options
-)
-  .then((res) => res.json())
-  //object destruction
-  .then(({ results }) => {
-    displayMovie(results);
-    initSwiper();
-  })
-  .catch((err) => console.error(err));
+if (movieWrapper) {
+  fetch(
+    "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+    options
+  )
+    .then((res) => res.json())
+    //object destruction
+    .then(({ results }) => {
+      displayMovie(results);
+      initSwiper();
+    })
+    .catch((err) => console.error(err));
 
-function displayMovie(list) {
-  list.forEach((ele) => {
-    let swiperSlide = document.createElement("div");
-    let img = document.createElement("img");
-    swiperSlide.className = "swiper-slide";
-    img.src = `https://image.tmdb.org/t/p/original${ele.poster_path}`;
-    img.alt = "Movie Poster";
-    img.addEventListener("click", function () {
-      showDetails(ele);
+  function displayMovie(list) {
+    list.forEach((ele) => {
+      let swiperSlide = document.createElement("div");
+      let img = document.createElement("img");
+      swiperSlide.className = "swiper-slide";
+      img.src = `https://image.tmdb.org/t/p/original${ele.poster_path}`;
+      img.alt = "Movie Poster";
+      img.addEventListener("click", function () {
+        showDetails(ele);
+      });
+      swiperSlide.appendChild(img);
+      movieWrapper.appendChild(swiperSlide);
     });
-    swiperSlide.appendChild(img);
-    movieWrapper.appendChild(swiperSlide);
-  });
+  }
 }
-
-// fetch tvShows
-fetch("https://api.themoviedb.org/3/tv/popular?language=en-US&page=1", options)
-  .then((res) => res.json())
-  //object destruction
-  .then(({ results }) => {
-    displayTv(results);
-    initSwiper();
-  })
-  .catch((err) => console.error(err));
-function displayTv(list) {
-  list.forEach((ele) => {
-    let swiperSlide = document.createElement("div");
-    let img = document.createElement("img");
-    swiperSlide.className = "swiper-slide";
-    img.src = `https://image.tmdb.org/t/p/original${ele.poster_path}`;
-    img.alt = "TV Show Poster";
-    img.addEventListener("click", function () {
-      showDetails(ele);
+if (tvWrapper) {
+  // fetch tvShows
+  fetch(
+    "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1",
+    options
+  )
+    .then((res) => res.json())
+    //object destruction
+    .then(({ results }) => {
+      displayTv(results);
+      initSwiper();
+    })
+    .catch((err) => console.error(err));
+  function displayTv(list) {
+    list.forEach((ele) => {
+      let swiperSlide = document.createElement("div");
+      let img = document.createElement("img");
+      swiperSlide.className = "swiper-slide";
+      img.src = `https://image.tmdb.org/t/p/original${ele.poster_path}`;
+      img.alt = "TV Show Poster";
+      img.addEventListener("click", function () {
+        showDetails(ele);
+      });
+      swiperSlide.appendChild(img);
+      tvWrapper.appendChild(swiperSlide);
     });
-    swiperSlide.appendChild(img);
-    tvWrapper.appendChild(swiperSlide);
-  });
+  }
 }
-
 /*Show details card*/
 
 function showDetails(ele) {
@@ -146,6 +156,24 @@ if (logout) {
     if (confirm("Are you sure you want to log out?")) {
       localStorage.removeItem("currentUser");
       window.location.href = "../index.html";
+    }
+  });
+}
+////// Search Logic /////
+const searchIcon = document.getElementById("search-icon");
+const searchInput = document.getElementById("search-input");
+
+
+if (searchIcon) {
+  searchIcon.addEventListener("click", (e) => {
+    e.stopPropagation(); 
+    searchInput.classList.toggle("active");
+    searchInput.focus();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!searchInput.contains(e.target) && !searchIcon.contains(e.target)) {
+      searchInput.classList.remove("active");
     }
   });
 }

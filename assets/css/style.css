@@ -60,9 +60,6 @@
 .navbar__btns {
   gap: 10px;
 }
-select option {
-  color: var(--PRIMARY_BLACK);
-}
 
 /* ========== Banner Section ========== */
 #home-hero {
@@ -205,12 +202,35 @@ select option {
 }
 
 .navbar__icons {
-  width:15%;
+  display: flex;
   align-items: center;
-  
+  gap: 2rem;
+  width: 30%;
+}
+.navbar__icons i {
+  color: var(--GREY_GREY_20);
+  cursor: pointer;
+  margin-left: 1rem;
+}
+/* Initial state of input */
+#search-input {
+  width: 0;
+  opacity: 0;
+  padding: 0;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
-
+/* Expanded state */
+#search-input.active {
+  width: 10rem;
+  opacity: 1;
+  padding: 4px 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid white;
+  border-radius: 4px;
+}
 
 /* ========== Hero Section========== */
 .hero {
