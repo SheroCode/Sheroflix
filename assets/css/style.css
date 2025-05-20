@@ -205,8 +205,12 @@ select option {
 }
 
 .navbar__icons {
-  width: 8%;
+  width:15%;
+  align-items: center;
+  
 }
+
+
 
 /* ========== Hero Section========== */
 .hero {
