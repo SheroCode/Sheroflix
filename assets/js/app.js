@@ -140,3 +140,12 @@ overlay.addEventListener("click", function (e) {
 });
 
 ////// Log Out Logic /////
+const logout = document.getElementById("logout-btn");
+if (logout) {
+  logout.addEventListener("click", function () {
+    if (confirm("Are you sure you want to log out?")) {
+      localStorage.removeItem("currentUser");
+      window.location.href = "../index.html";
+    }
+  });
+}

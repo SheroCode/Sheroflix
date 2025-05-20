@@ -308,8 +308,8 @@ select option {
 
 .message {
   margin-top: 10px;
-  font-size: 14px;
-  color: red;
+  font-size: 1rem;
+  color: var(--PRIMARY_RED);
 }
 .message.success {
   color: green;

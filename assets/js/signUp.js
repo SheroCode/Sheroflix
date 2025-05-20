@@ -21,9 +21,6 @@ if (signupForm) {
     const userExists = users.some((user) => user.email === signupEmail); //true or false
     if (userExists) {
       messageEl.textContent = "User already exists. Please sign in.";
-      setTimeout(() => {
-        window.location.href = "signin.html";
-      }, 1500);
       return;
     }
 
