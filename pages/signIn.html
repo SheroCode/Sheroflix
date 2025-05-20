@@ -10,8 +10,7 @@
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="path/to/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="path/to/your-custom-style.css" />
+
     <!-- favicon -->
     <link
       type="image/png"
@@ -40,22 +39,29 @@
         <div class="container">
           <div class="form-wrapper">
             <h2 class="form__header">Sign In</h2>
-            <form>
+            <form id="signin-form">
               <div class="form__input">
-                <input type="email" required placeholder="Email " />
+                <input
+                  id="signin-email"
+                  type="email"
+                  required
+                  placeholder="Email " />
               </div>
               <div class="form__input">
-                <input type="password" required placeholder="Password" />
+                <input
+                  id="signin-password"
+                  type="password"
+                  required
+                  placeholder="Password" />
               </div>
               <button class="sign-btn" type="submit">Sign In</button>
-              <div class="form__help">
-                <div class="remember-me">
-                  <input type="checkbox" id="remember-me" />
-                  <label for="remember-me">Remember me</label>
-                </div>
-                <div class="form__sign-up">
-                  <p>New to Netflix?<a href="signUp.html"> Sign up now.</a></p>
-                </div>
+              <p id="signinMessage" class="message"></p>
+              <div class="remember-me">
+                <input type="checkbox" id="remember-me" />
+                <label for="remember-me">Remember me</label>
+              </div>
+              <div class="form__sign-up">
+                <p>New to Netflix?<a href="signUp.html"> Sign up now.</a></p>
               </div>
             </form>
           </div>
@@ -92,6 +98,7 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="./assets/js/app.js"></script>
+    <script src="../assets/js/signIn.js"></script>
+    <!-- <script type="module" src="./assets/js/app.js"></script> -->
   </body>
 </html>

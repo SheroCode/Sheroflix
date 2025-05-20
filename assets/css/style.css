@@ -176,6 +176,9 @@ select option {
 .footer-note a {
   color: var(--SECONDARY_BLUE_100);
 }
+.footer-note {
+  margin-top: 1rem;
+}
 
 /************ End of Landing Page Styles ************/
 /************ Strat of Home Page Styles ************/
@@ -242,7 +245,6 @@ select option {
   background-position: center;
   padding: 10rem 0;
   box-shadow: -1px 1px 234px 14px rgba(0, 0, 0, 0.95) inset;
-
 }
 /* Form wrapper */
 .form-wrapper {

@@ -1,4 +1,3 @@
-// Signup logic
 const signupForm = document.getElementById("signupForm");
 if (signupForm) {
   signupForm.addEventListener("submit", function (e) {
@@ -7,10 +6,10 @@ if (signupForm) {
     const signupEmail = document.getElementById("signup-email").value.trim();
     const signupPassword = document.getElementById("signup-password").value;
     const messageEl = document.getElementById("signupMessage");
-    // Clear previous message
+
     messageEl.textContent = "";
     messageEl.classList.remove("success");
-    // Simple validation
+
     if (!signupName || !signupEmail || !signupPassword) {
       messageEl.textContent = "All fields are required.";
       return;
