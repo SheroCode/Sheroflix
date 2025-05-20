@@ -3,15 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netflix Sign In</title>
+    <title>Netflix Sign Up</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="path/to/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="path/to/your-custom-style.css" />
+
     <!-- favicon -->
     <link
       type="image/png"
@@ -36,28 +35,38 @@
     </nav>
     <!-- Form section -->
     <main>
-      <section class="sign-in">
+      <section class="sign-up">
         <div class="container">
-          <div class="form-wrapper">
-            <h2 class="form__header">Sign In</h2>
-            <form>
-              <div class="form__input">
-                <input type="email" required placeholder="Email " />
-              </div>
-              <div class="form__input">
-                <input type="password" required placeholder="Password" />
-              </div>
-              <button class="sign-btn" type="submit">Sign In</button>
-              <div class="form__help">
-                <div class="remember-me">
-                  <input type="checkbox" id="remember-me" />
-                  <label for="remember-me">Remember me</label>
+          <div class="sign-up__background">
+            <div class="form-wrapper">
+              <h2 class="form__header">Sign Up</h2>
+              <form id="signupForm">
+                <div class="form__input">
+                  <input
+                    type="text"
+                    required
+                    placeholder="Your Name"
+                    id="signup-name" />
                 </div>
-                <div class="form__sign-up">
-                  <p>New to Netflix?<a href="signUp.html"> Sign up now.</a></p>
+                <div class="form__input">
+                  <input
+                    type="email"
+                    required
+                    placeholder="Email"
+                    id="signup-email" />
                 </div>
-              </div>
-            </form>
+                <div class="form__input">
+                  <input
+                    type="password"
+                    required
+                    placeholder="Password"
+                    id="signup-password" />
+                </div>
+
+                <button class="sign-btn" type="submit">Sign Up</button>
+                <p id="signupMessage" class="message"></p>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -92,6 +101,7 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="./assets/js/app.js"></script>
+    <script src="../assets/js/signUp.js"></script>
+    <!-- <script type="module" src="../assets/js/app.js"></script> -->
   </body>
 </html>

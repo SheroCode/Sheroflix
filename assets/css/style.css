@@ -170,7 +170,7 @@ select option {
 }
 
 .language-selector {
-  margin: 4rem 0;
+  margin-top: 4rem;
 }
 
 .footer-note a {
@@ -225,24 +225,39 @@ select option {
 }
 
 /************ End of Home Page Styles ************/
-/************ Start of Sign in Page Styles ************/
 
-.signin {
+/************ Start of Sign in / Sign up Page Styles ************/
+
+.sign-in {
   background-image: url(../images/banner/HomePage.png);
   background-size: cover;
   background-position: center;
   padding: 10rem 0;
 }
+.sign-up__background {
+  width: 50%;
+  margin: auto;
+  background-image: url(../images/banner/9bXHaLlsFYpJUutg4E6WXAjaxDi.webp);
+  background-size: cover;
+  background-position: center;
+  padding: 10rem 0;
+  box-shadow: -1px 1px 234px 14px rgba(0, 0, 0, 0.95) inset;
 
+}
 /* Form wrapper */
 .form-wrapper {
   background: var(--TRANSPARENT_BLACK_60);
-  width: 42%;
   margin: auto;
   padding: 3rem;
-  border-radius: 4px;
+  border-radius: 2px;
   color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+.sign-in .form-wrapper {
+  width: 50%;
+}
+.sign-up .form-wrapper {
+  width: 80%;
 }
 .form__header {
   margin-bottom: 28px;
@@ -257,32 +272,44 @@ select option {
   color: #b3b3b3;
 }
 
-.signin-btn,
+.sign-btn,
 .form__input input {
   width: 100%;
   font-size: 1rem;
+  font-weight: 600;
 }
 .form__input,
-.signin-btn {
+.sign-btn {
   margin-bottom: 1rem;
 }
 .form-help a {
   color: #b3b3b3;
   text-decoration: none;
 }
-.signup {
+.form__sign-up {
   color: #737373;
-  margin-top: 28px;
+  margin-top: 1rem;
 }
-.signup a {
+.form__sign-up a {
   color: #fff;
   text-decoration: none;
   margin-left: 5px;
+  font-weight: 500;
 }
-.signup a:hover {
+.form__sign-up a:hover {
   text-decoration: underline;
 }
-/************ End of Sgin in Page Styles ************/
+
+.message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: red;
+}
+.message.success {
+  color: green;
+}
+/************ End of Sign in  / Sign up Page Styles ************/
+
 /* ========== Responsive (Mobile) ========== */
 /* @media (max-width: 768px) {
   .banner__content {

@@ -119,7 +119,7 @@
 .info-btn:hover {
   background-color: var(--GREY_GREY_300_T40);
 }
-.signin-btn {
+.sign-btn {
   padding: 16px;
   background: #e50914;
   border-radius: 0.25rem;
@@ -128,7 +128,7 @@
   font-weight: 500;
   transition: ease 0.2s;
 }
-.signin-btn:hover {
+.sign-btn:hover {
   background-color: var(--SECONDARY_RED_200);
 }
 .flex {
