@@ -68,7 +68,7 @@
 .primary-btn {
   background-color: var(--PRIMARY_RED);
   color: var(--PRIMARY_WHITE);
-  font-size:14px;
+  font-size: 14px;
   font-weight: 500;
   padding: 5px 10px;
   border-radius: 0.25rem;
@@ -224,6 +224,19 @@ input {
   border-radius: 0.25rem;
   font-size: 1rem;
 }
+textarea {
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu;
+  background-color: #00000000;
+  color: #ffffff;
+  padding: 2rem;
+  border: solid 1px var(--GREY_GREY_100);
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  width: 100%;
+  resize: none;
+  margin:2rem 0;
+}
 
 section {
   padding-top: 4rem;
@@ -234,10 +247,10 @@ button {
   cursor: pointer;
   background: none;
 }
-/* img {
+img {
   width: 100%;
-} */
- select option {
+}
+select option {
   color: var(--PRIMARY_BLACK);
 }
 .hidden {

@@ -137,18 +137,20 @@ function showDetails(ele) {
 }
 
 /*Close details card*/
-document.querySelector(".close-btn").addEventListener("click", function () {
-  overlay.classList.remove("block");
-  overlay.classList.add("hidden");
-});
-overlay.addEventListener("click", function (e) {
-  // console.log(e.target)
-  if (e.target === overlay) {
+const closeBtn = document.querySelector(".close-btn");
+if (closeBtn) {
+  closeBtn.addEventListener("click", function () {
     overlay.classList.remove("block");
     overlay.classList.add("hidden");
-  }
-});
-
+  });
+  overlay.addEventListener("click", function (e) {
+    // console.log(e.target)
+    if (e.target === overlay) {
+      overlay.classList.remove("block");
+      overlay.classList.add("hidden");
+    }
+  });
+}
 ////// Log Out Logic /////
 const logout = document.getElementById("logout-btn");
 if (logout) {
@@ -163,10 +165,9 @@ if (logout) {
 const searchIcon = document.getElementById("search-icon");
 const searchInput = document.getElementById("search-input");
 
-
 if (searchIcon) {
   searchIcon.addEventListener("click", (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     searchInput.classList.toggle("active");
     searchInput.focus();
   });

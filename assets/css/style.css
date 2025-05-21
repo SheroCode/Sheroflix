@@ -20,6 +20,7 @@
 .details__overview {
   padding: 2rem 1.5rem;
 }
+
 .details__info {
   display: flex;
   align-items: center;
@@ -117,6 +118,7 @@
   height: auto;
   display: block;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .custom-prev,
@@ -355,3 +357,76 @@
     width: 90%;
   }
 } */
+/************ Start Details Page Styles ************/
+.show-details {
+  padding: 10rem 0 2rem 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.show-details__row {
+  display: flex;
+  /* justify-content: space-between; */
+  /* flex-wrap: wrap; */
+  /* gap:10rem; */
+  /* background-color: tomato; */
+}
+.show-details__rating {
+  margin-left: 1rem;
+}
+.show-details__contents {
+  padding: 2rem 1rem 2rem 4rem;
+  width: 60%;
+}
+.show-details__rating i {
+  color: goldenrod;
+  margin-left: 1rem;
+}
+.show-details__poster {
+  width: 40%;
+}
+.show-details__header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.show-details__date {
+  margin-top: 1rem;
+}
+.show-details__p {
+  color: var(--GREY_GREY_100);
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.show-details__p p {
+  width: 6rem;
+}
+.show-details__p span {
+  color: var(--PRIMARY_WHITE);
+}
+.show-details__overview {
+  /* width: 50%; */
+  margin: 2rem 0;
+}
+.show-details__overview h4 {
+  line-height: 1.5;
+ 
+}
+
+/***Comments section******/
+.comment__label {
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  display: inline-block;
+}
+.comments__list {
+  padding: 2rem 0;
+}
+.user-comment {
+  padding: 1rem;
+  background-color: var(--GREY_GREY_350);
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+/************ End Details Page Styles ************/
