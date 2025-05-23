@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <!-- Overlay Div -->
+    <!-- Overlay details Div -->
     <div class="overlay hidden">
       <div class="details">
         <figure class="details__image">
@@ -48,6 +48,7 @@
         </div>
       </div>
     </div>
+
     <!-- Nav bar -->
     <nav class="navbar">
       <div class="container">
@@ -72,6 +73,20 @@
     </nav>
 
     <main>
+      <div class="chatbot">
+        <button id="chat-toggle" class="chatbot-toggle">
+          <i class="fa-brands fa-rocketchat"></i>
+        </button>
+        <div class="chatbot-window hidden">
+          <div class="chatbot-header">ChatBot Assistant</div>
+          <div id="chat-messages" class="chatbot-messages"></div>
+          <input
+            type="text"
+            id="chat-input"
+            class="chatbot-input"
+            placeholder="Ask me something..." />
+        </div>
+      </div>
       <!-- Banner section -->
       <section id="landing-banner" class="banner">
         <div class="container">

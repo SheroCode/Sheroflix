@@ -26,6 +26,7 @@ function initSwiper() {
       prevEl: ".swiper-button-prev",
     },
     breakpoints: {
+      640: { slidesPerView: 1, spaceBetween: 10 },
       768: { slidesPerView: 2, spaceBetween: 10 },
       1024: { slidesPerView: 4, spaceBetween: 20 },
       1440: { slidesPerView: 5, spaceBetween: 30 },
@@ -133,7 +134,9 @@ function showDetails(ele) {
   detailsDate.textContent = ele.release_date
     ? ele.release_date.split("").splice(0, 4).join("")
     : "2000";
-  detailsDescription.textContent = ele.overview || "No avilabel over view";
+  detailsDescription.textContent =
+    ele.overview.split(" ").splice(0, 30).join(" ") + "......" ||
+    "No avilabel over view";
 }
 
 /*Close details card*/
@@ -161,7 +164,7 @@ if (logout) {
     }
   });
 }
-////// Search Logic /////
+////// Search animation Logic /////
 const searchIcon = document.getElementById("search-icon");
 const searchInput = document.getElementById("search-input");
 
@@ -177,4 +180,115 @@ if (searchIcon) {
       searchInput.classList.remove("active");
     }
   });
+}
+
+/*****search diplay logic  */
+
+if (searchInput) {
+  searchInput.addEventListener("keydown", async function (e) {
+    if (e.key === "Enter") {
+      let searchInputValue = searchInput.value.trim();
+      if (searchInputValue !== "") {
+        // console.log("Enter key was pressed!");
+        // console.log(searchInputValue);
+        const results = await fetchSearchInput(searchInputValue);
+        displaySearchResults(results);
+        searchInput.value = "";
+      }
+    }
+  });
+
+  async function fetchSearchInput(searchInputValue) {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/search/multi?query=${searchInputValue}&include_adult=false&language=en-US&page=1`,
+      options
+    );
+    const data = await res.json();
+    return data.results;
+  }
+  function displaySearchResults(results) {
+    const searchOverlay = document.querySelector(".search-overlay");
+    if (results.length !== 0 && searchOverlay) {
+      searchOverlay.classList.remove("hidden");
+
+      const searchWrapper = document.getElementById("search-results-wrapper");
+      searchWrapper.innerHTML = "";
+
+      results.forEach((ele) => {
+        if (ele.poster_path === "" || !ele.poster_path) return;
+        let swiperSlide = document.createElement("div");
+        let img = document.createElement("img");
+        swiperSlide.className = "swiper-slide";
+        img.src = `https://image.tmdb.org/t/p/original${ele.poster_path}`;
+        img.alt = "Poster";
+        // img.addEventListener("click", function () {
+        //   showDetails(ele);
+        // });
+        swiperSlide.appendChild(img);
+        searchWrapper.appendChild(swiperSlide);
+      });
+      initSwiper(); // reinitialize Swiper after DOM update
+    }
+    const searchCloseBtn = document.querySelector(".search__close-btn");
+    if (searchCloseBtn) {
+      searchCloseBtn.addEventListener("click", function () {
+        searchOverlay.classList.remove("block");
+        searchOverlay.classList.add("hidden");
+      });
+      searchOverlay.addEventListener("click", function (e) {
+        // console.log(e.target)
+        if (e.target === searchOverlay) {
+          searchOverlay.classList.remove("block");
+          searchOverlay.classList.add("hidden");
+        }
+      });
+    }
+  }
+}
+
+/**** Chatbot Logic */
+
+const chatToggle = document.getElementById("chat-toggle");
+
+if (chatToggle) {
+  const chatWindow = document.querySelector(".chatbot-window");
+  const chatInput = document.getElementById("chat-input");
+  const chatMessages = document.getElementById("chat-messages");
+  chatToggle.addEventListener("click", () => {
+    chatWindow.classList.toggle("hidden");
+  });
+
+  chatInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter" && chatInput.value.trim()) {
+      const userMessage = chatInput.value.trim();
+      addMessage("You", userMessage);
+      respondToMessage(userMessage);
+      chatInput.value = "";
+    }
+  });
+
+  function addMessage(sender, text) {
+    const msg = document.createElement("div");
+    msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+    chatMessages.appendChild(msg);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function respondToMessage(message) {
+    let reply = "";
+
+    // Simple mock logic — you can enhance or use AI
+    if (message.toLowerCase().includes("hello")) {
+      reply = "Hello! How can I help you today?";
+    } else if (message.toLowerCase().includes("movie")) {
+      reply = "Looking for a movie? Try checking the trending section!";
+    } else if (message.toLowerCase().includes("tv")) {
+      reply = "We have great TV shows under the TV Shows section.";
+    } else {
+      reply =
+        "Sorry, I didn't understand that. Try asking about movies or TV shows!";
+    }
+
+    setTimeout(() => addMessage("Bot", reply), 500);
+  }
 }

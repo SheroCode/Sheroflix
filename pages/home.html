@@ -46,7 +46,21 @@
         </div>
       </div>
     </div>
-
+    <!-- Search Results Overlay -->
+    <div class="search-overlay hidden">
+      <div class="container">
+        <div class="search-details">
+          <button class="search__close-btn">
+            <img src="../assets/images/Buttons/close.png" alt="Close" />
+          </button>
+          <div class="search-results-slider swiper">
+            <div class="swiper-wrapper" id="search-results-wrapper"></div>
+            <div class="swiper-button-next custom-next"></div>
+            <div class="swiper-button-prev custom-prev"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Nav bar -->
     <nav class="navbar home-navbar">
       <div class="container">
@@ -82,6 +96,21 @@
       </div>
     </nav>
     <main>
+      <!-- Chatbot -->
+      <div class="chatbot">
+        <button id="chat-toggle" class="chatbot-toggle">
+          <i class="fa-brands fa-rocketchat"></i>
+        </button>
+        <div class="chatbot-window hidden">
+          <div class="chatbot-header">ChatBot Assistant</div>
+          <div id="chat-messages" class="chatbot-messages"></div>
+          <input
+            type="text"
+            id="chat-input"
+            class="chatbot-input"
+            placeholder="Ask me something..." />
+        </div>
+      </div>
       <!-- hero section -->
       <section id="home-hero" class="hero">
         <div class="container">

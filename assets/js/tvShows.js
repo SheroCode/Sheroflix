@@ -17,6 +17,7 @@ function initSwiper() {
       prevEl: ".swiper-button-prev",
     },
     breakpoints: {
+      640: { slidesPerView: 1, spaceBetween: 10 },
       768: { slidesPerView: 2, spaceBetween: 10 },
       1024: { slidesPerView: 4, spaceBetween: 20 },
       1440: { slidesPerView: 5, spaceBetween: 30 },
@@ -118,7 +119,9 @@ function rendertvShowDetails(tvshow) {
                 </div>
               </div>
               <div class="show-details__date">
-                <p id="release_date">${tvshow.last_air_date?tvshow.last_air_date.slice(0, 4):""}</p>
+                <p id="release_date">${
+                  tvshow.last_air_date ? tvshow.last_air_date.slice(0, 4) : ""
+                }</p>
               </div>
               <div class="show-details__overview">
                 <h4>
@@ -160,4 +163,41 @@ if (tvShowId && tvShowDetailsSection) {
         "<p>tvshow details could not be loaded.</p>";
       console.error(err);
     });
+}
+/******  Comment Section (Local Storage)******/
+const reviewForm = document.getElementById("form-comment");
+
+if (reviewForm) {
+  const commentsList = document.querySelector(".comments__list");
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const showId = urlParams.get("id");
+  const storageKey = `comments_${showId}`;
+
+  let list = JSON.parse(localStorage.getItem(storageKey)) || [];
+  renderList(list);
+  reviewForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const textarea = document.getElementById("comment");
+    const userReview = textarea.value.trim();
+    if (userReview != "") {
+      const obj = {
+        id: Date.now(),
+        comment: userReview,
+      };
+      list.push(obj);
+
+      renderList(list);
+      textarea.value = "";
+    }
+  });
+  function renderList(list) {
+    commentsList.innerHTML = "";
+    list.forEach((li) => {
+      const listItem = document.createElement("li");
+      listItem.className = "user-comment";
+      listItem.textContent = li.comment;
+      commentsList.appendChild(listItem);
+    });
+  }
 }
