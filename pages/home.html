@@ -96,21 +96,6 @@
       </div>
     </nav>
     <main>
-      <!-- Chatbot -->
-      <div class="chatbot">
-        <button id="chat-toggle" class="chatbot-toggle">
-          <i class="fa-brands fa-rocketchat"></i>
-        </button>
-        <div class="chatbot-window hidden">
-          <div class="chatbot-header">ChatBot Assistant</div>
-          <div id="chat-messages" class="chatbot-messages"></div>
-          <input
-            type="text"
-            id="chat-input"
-            class="chatbot-input"
-            placeholder="Ask me something..." />
-        </div>
-      </div>
       <!-- hero section -->
       <section id="home-hero" class="hero">
         <div class="container">
@@ -190,6 +175,28 @@
               <!-- If we need scrollbar -->
               <div class="swiper-scrollbar"></div>
             </div>
+          </div>
+        </div>
+      </section>
+      <!-- Chatbot section -->
+      <section class="chatbotsection">
+        <button class="chatbot-toggler">
+          <i class="fa-brands fa-rocketchat fa-2xl"></i>
+        </button>
+
+        <div class="chatbot hidden">
+          <div class="header"><h2>Chatbot</h2></div>
+
+          <ul class="chatbox">
+            <li class="chat incoming">
+              <i class="fa-brands fa-rocketchat fa-lg"></i>
+              <p>Hi <br />How can i help you today?</p>
+            </li>
+          </ul>
+
+          <div class="chat-input">
+            <textarea placeholder="Enter a message....." required></textarea>
+            <i id="send-btn" class="fa-solid fa-paper-plane"></i>
           </div>
         </div>
       </section>
