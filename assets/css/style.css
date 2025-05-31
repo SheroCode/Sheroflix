@@ -186,6 +186,7 @@
 }
 .footer-note {
   margin-top: 1rem;
+  color: var(--GREY_GREY_350);
 }
 
 /************ End of Landing Page Styles ************/
@@ -347,6 +348,12 @@
 }
 .chat-input textarea:valid ~ i {
   visibility: visible;
+}
+.not-found {
+  padding: 20rem 0;
+}
+.not-found a {
+  color: var(--SECONDARY_BLUE_100);
 }
 /************ End of Home Page Styles ************/
 

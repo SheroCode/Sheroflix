@@ -1,31 +1,4 @@
-// =================== API Setup ===================
-const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYzYxMjA3Yzk4MDI1ZjBkZDlkN2RjMTQ3NjJiNzcyMyIsIm5iZiI6MTc0NzM2NDkyNC4zMzcsInN1YiI6IjY4MjZhYzNjOTA1OTk2NTJhZWFkYTc5MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sen0exBSPtLuOdBL55OGwo-8LcSp4CkWERe8SVa7nP4",
-  },
-};
-
-// =================== Swiper.js Initialization ===================
-function initSwiper() {
-  new Swiper(".swiper", {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      768: { slidesPerView: 2, spaceBetween: 10 },
-      1024: { slidesPerView: 4, spaceBetween: 20 },
-      1440: { slidesPerView: 5, spaceBetween: 30 },
-    },
-  });
-}
-
+import { initSwiper,options } from "./swiper.js";
 // =================== Fetch and Display Movies by Genre ===================
 const GenreSections = document.querySelector("#genre-sections");
 
