@@ -7,6 +7,7 @@ import {
   handelLogout,
   handleComments,
 } from "./logics.js";
+
 // =================== Fetch and Display tvshows by Genre ===================
 const GenreSections = document.querySelector("#genre-sections");
 if (GenreSections) {
