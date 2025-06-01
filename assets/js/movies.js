@@ -56,10 +56,8 @@ if (GenreSections) {
       displayGenreSection(genre.name, movies.slice(0, 10));
     }
   }
-
   fire();
 }
-
 // =================== Handle Poster Click ===================
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("swiper-slide__poster")) {
@@ -70,7 +68,6 @@ document.addEventListener("click", function (e) {
 
 // =================== Details Page ===================
 const movieDetailsSection = document.querySelector(".show-details__row");
-
 async function fetchMovieDetails(id) {
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
@@ -79,7 +76,6 @@ async function fetchMovieDetails(id) {
   const data = await res.json();
   return data;
 }
-
 function renderMovieDetails(movie) {
   movieDetailsSection.innerHTML = `
     <figure class="show-details__poster">
@@ -126,7 +122,7 @@ function renderMovieDetails(movie) {
     </div>
   `;
 
-  // ✅ Attach play button click event after rendering
+  // Attach play button click event after rendering
   const playBtn = document.querySelector(".play-btn");
   if (playBtn) {
     playBtn.addEventListener("click", function (e) {
