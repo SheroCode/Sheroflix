@@ -1,19 +1,24 @@
 //swiper js
 export function initSwiper() {
-  new Swiper(".swiper", {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      640: { slidesPerView: 1, spaceBetween: 10 },
-      768: { slidesPerView: 2, spaceBetween: 10 },
-      1024: { slidesPerView: 4, spaceBetween: 20 },
-      1440: { slidesPerView: 5, spaceBetween: 30 },
-    },
+  const swiperContainers = document.querySelectorAll(".swiper");
+  swiperContainers.forEach((container) => {
+    const slides = container.querySelectorAll(".swiper-slide");
+    const shouldLoop = slides.length > 4; // Only enable loop if more than 4 slides
+    new Swiper(container, {
+      slidesPerView: 4,
+      spaceBetween: 20,
+      loop: shouldLoop,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        640: { slidesPerView: 2 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 },
+      },
+    });
   });
 }
 export const options = {

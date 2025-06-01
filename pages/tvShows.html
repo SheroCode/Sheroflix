@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Netflix movies</title>
@@ -22,33 +22,8 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
-    <!-- Overlay Div -->
-    <div class="overlay hidden">
-      <div class="details">
-        <figure class="details__image">
-          <img src="" alt="" />
-          <button class="close-btn">
-            <img src="../assets/images/Buttons/close.png" alt="" />
-          </button>
-        </figure>
-        <div class="details__overview">
-          <div class="details__info">
-            <h3 class="details__type"></h3>
-            <h3 class="details__date"></h3>
-            <button class="plus-btn">
-              <img
-                src="../assets/images/Buttons/Plus.png"
-                alt=""
-                title="Add to list" />
-            </button>
-          </div>
-          <p class="details__description"></p>
-        </div>
-      </div>
-    </div>
-
     <!-- Navbar -->
- <nav class="navbar home-navbar">
+    <nav class="navbar home-navbar">
       <div class="container">
         <div class="row">
           <ul class="navbar__links flex">
@@ -67,7 +42,9 @@
           <ul class="navbar__icons">
             <li class="navbar__search flex">
               <input type="text" id="search-input" placeholder="Search..." />
-              <i class="fa-solid fa-magnifying-glass fa-lg" id="search-icon"></i>
+              <i
+                class="fa-solid fa-magnifying-glass fa-lg"
+                id="search-icon"></i>
             </li>
             <li class="navbar__notification">
               <i class="fa-regular fa-bell fa-lg"></i>
@@ -78,13 +55,31 @@
           </ul>
         </div>
       </div>
-    </nav>  
+    </nav>
     <!-- Main Content -->
-
     <main>
       <section class="TVshows-category">
         <div class="container">
           <div id="genre-sections"></div>
+        </div>
+      </section>
+      <!-- Chatbot section -->
+      <section class="chatbotsection">
+        <button class="chatbot-toggler">
+          <i class="fa-brands fa-rocketchat fa-2xl"></i>
+        </button>
+        <div class="chatbot hidden">
+          <div class="header"><h2>Chatbot</h2></div>
+          <ul class="chatbox">
+            <li class="chat incoming">
+              <i class="fa-brands fa-rocketchat fa-lg"></i>
+              <p>Hi <br />How can i help you today?</p>
+            </li>
+          </ul>
+          <div class="chat-input">
+            <textarea placeholder="Enter a message....." required></textarea>
+            <i id="send-btn" class="fa-solid fa-paper-plane"></i>
+          </div>
         </div>
       </section>
     </main>
@@ -136,6 +131,5 @@
     <!-- Use Swiper from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="../assets/js/tvshows.js"></script>
-    <script type="module" src="../assets/js/app.js"></script>
   </body>
 </html>

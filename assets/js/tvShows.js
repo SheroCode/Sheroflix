@@ -1,4 +1,5 @@
-import { initSwiper,options } from "./swiper.js";
+import { initSwiper, options } from "./swiper.js";
+import { initializeChatbot } from "./chatbot.js";
 
 const GenreSections = document.querySelector("#genre-sections");
 if (GenreSections) {
@@ -176,3 +177,4 @@ if (reviewForm) {
     });
   }
 }
+initializeChatbot();

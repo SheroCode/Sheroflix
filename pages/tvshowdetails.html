@@ -40,7 +40,6 @@
             <li class="navbar__link"><a href="./mylist.html">My List</a></li>
           </ul>
           <ul class="navbar__icons">
-
             <li class="navbar__notification">
               <i class="fa-regular fa-bell fa-lg"></i>
             </li>
@@ -52,58 +51,10 @@
       </div>
     </nav>
     <!-- Main Content -->
-
     <main>
       <section class="show-details">
         <div class="container">
-          <div class="show-details__row">
-            <!-- <figure class="show-details__poster">
-              <img src="../assets/images/banner/showimage.webp" alt="" />
-            </figure>
-            <div class="show-details__contents">
-              <div class="show-details__header">
-                <a href="" class="hero__btn play-btn flex"
-                  ><i class="fa-solid fa-play"></i>Play</a
-                >
-                <h4 class="show-details__rating">
-                  <span id="vote-average">4.9</span>
-                  <i class="fa-solid fa-star"></i>
-                </h4>
-                <div class="show-details__voters">
-                  <p id="vote-count">1350 Vote</p>
-                </div>
-              </div>
-              <div class="show-details__date">
-                <p id="release_date">2025</p>
-              </div>
-              <div class="show-details__overview">
-                <h3>
-                  Lorem ipsum dolor sit amet, Expedita unde, odit assumenda id
-                  necessitatibus tempore ducimus natus enim quas ratione.
-                </h3>
-              </div>
-              <div class="show-details__info">
-                <div class="show-details__p">
-                  <p>Starring</p>
-                  <span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit.</span
-                  >
-                </div>
-                <div class="show-details__p">
-                  <p>Created by</p>
-                  <span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit.</span
-                  >
-                </div>
-                <div class="show-details__p">
-                  <p>Genre</p>
-                  <span> Lorem ipsum dolor sit amet </span>
-                </div>
-              </div>
-            </div> -->
-          </div>
+          <div class="show-details__row"></div>
         </div>
       </section>
       <section class="comments">
@@ -117,22 +68,33 @@
             <button class="secondary-btn" type="submit">Submit</button>
           </form>
 
-          <ul class="comments__list">
-            <!-- <li class="user-comment" id="comment-li">mmmmmmm</li>
-            <li class="user-comment">comments of users</li>
-            <li class="user-comment">comments of users</li>
-            <li class="user-comment">comments of users</li>
-            <li class="user-comment">comments of users</li> -->
+          <ul class="comments__list"></ul>
+        </div>
+      </section>
+      <!-- Chatbot section -->
+      <section class="chatbotsection">
+        <button class="chatbot-toggler">
+          <i class="fa-brands fa-rocketchat fa-2xl"></i>
+        </button>
+        <div class="chatbot hidden">
+          <div class="header"><h2>Chatbot</h2></div>
+          <ul class="chatbox">
+            <li class="chat incoming">
+              <i class="fa-brands fa-rocketchat fa-lg"></i>
+              <p>Hi <br />How can i help you today?</p>
+            </li>
           </ul>
+          <div class="chat-input">
+            <textarea placeholder="Enter a message....." required></textarea>
+            <i id="send-btn" class="fa-solid fa-paper-plane"></i>
+          </div>
         </div>
       </section>
     </main>
-
     <!-- footer -->
     <footer class="footer">
       <div class="container">
         <p class="footer__questions"><a href="#">Questions? Contact us.</a></p>
-
         <div class="footer__links flex">
           <ul class="footer__ul">
             <li><a href="#">FAQ</a></li>
@@ -158,14 +120,12 @@
             <li><a href="#">Contact Us</a></li>
           </ul>
         </div>
-
         <div class="language-selector">
           <select class="lang-select">
             <option>English</option>
             <option>العربية</option>
           </select>
         </div>
-
         <p class="footer-note">
           This page is protected by Google reCAPTCHA to ensure you're not a bot.
           <a href="#">Learn more.</a>

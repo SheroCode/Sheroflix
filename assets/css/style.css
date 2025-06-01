@@ -14,12 +14,11 @@
 .details {
   width: 50%;
   max-width: 500px;
-  min-width: 400px;
+  min-width: 300px;
   border-radius: 1rem;
   margin: 2rem auto;
   background-color: var(--GREY_GREY_350);
 }
-
 .search-details {
   border-radius: 1rem;
   margin: 20rem auto;
@@ -28,7 +27,6 @@
 .details__overview {
   padding: 2rem 1.5rem;
 }
-
 .details__info {
   display: flex;
   align-items: center;
@@ -40,9 +38,9 @@
 }
 .details__image img {
   width: 100%;
+  height: 100;
   position: relative;
 }
-
 .details__description {
   margin: auto;
   font-size: 1.25rem;
@@ -57,7 +55,6 @@
   top: 0.75rem;
   right: 0.75rem;
 }
-
 /* ========== Navbar ========== */
 .navbar {
   position: absolute;
@@ -70,58 +67,48 @@
 .navbar__btns {
   gap: 0.65rem;
 }
-
 /* ========== Banner Section ========== */
 #home-hero {
   background-image: url(../images/banner/HomePage.png);
   background-size: cover;
   background-position: center;
 }
-
 #landing-banner {
   background-image: url(../images/banner/LandingPage.png);
   background-size: cover;
   background-position: center;
 }
-
 .banner {
   padding: 11rem 0;
   text-align: center;
 }
-
 .banner__content {
   width: 51.1%;
   margin: 0 auto;
 }
-
 .banner__paragraph {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   color: var(--PRIMARY_WHITE);
   font-weight: 500;
 }
-
 .banner__started {
   margin-top: 1rem;
   gap: 0.65rem;
 }
-
 .started__input {
   width: 67.5%;
 }
-
 /* ========== Trending Section ========== */
 .trending {
   padding-bottom: 5rem;
 }
-
 .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 12.5rem;
 }
-
 .swiper-slide img {
   width: 100%;
   height: auto;
@@ -129,7 +116,6 @@
   border-radius: 1.25rem;
   cursor: pointer;
 }
-
 .custom-prev,
 .custom-next {
   color: var(--TRANSPARENT_WHITE_70);
@@ -137,7 +123,6 @@
   border-radius: 0.5rem;
   cursor: pointer;
 }
-
 /* ========== Reasons Section ========== */
 .reasons {
   padding: 3rem 0;
@@ -146,7 +131,6 @@
   gap: 1rem;
   justify-content: space-between;
 }
-
 .reasons__item {
   width: 24%;
   height: 17rem;
@@ -154,33 +138,23 @@
   background-color: var(--TRANSPARENT_WHITE_15);
   border-radius: 0.75rem;
 }
-
 /* ========== Footer Section ========== */
 .footer {
   padding: 3rem 0 6rem 0;
 }
-
 .footer__ul li {
   margin: 0.5rem 0;
   color: var(--TRANSPARENT_WHITE_15);
 }
-
-.footer__ul li a {
+.footer__ul li a,.footer__questions a {
   color: var(--TRANSPARENT_WHITE_70);
 }
-
 .footer__questions {
   margin-bottom: 1.5rem;
 }
-
-.footer__questions a {
-  color: var(--TRANSPARENT_WHITE_70);
-}
-
 .language-selector {
   margin-top: 4rem;
 }
-
 .footer-note a {
   color: var(--SECONDARY_BLUE_100);
 }
@@ -188,7 +162,6 @@
   margin-top: 1rem;
   color: var(--GREY_GREY_350);
 }
-
 /************ End of Landing Page Styles ************/
 /************ Strat of Home Page Styles ************/
 /* ========== Navbar ========== */
@@ -212,7 +185,6 @@
 .navbar__logo {
   margin-right: 5px;
 }
-
 .navbar__icons {
   display: flex;
   align-items: center;
@@ -233,7 +205,6 @@
   font-size: 1rem;
   transition: all 0.3s ease;
 }
-
 /* Expanded state */
 #search-input.active {
   width: 10rem;
@@ -243,7 +214,6 @@
   border-bottom: 1px solid white;
   border-radius: 4px;
 }
-
 /* ========== Hero Section========== */
 .hero {
   padding: 11rem 0;
@@ -263,7 +233,6 @@
   height: 1.25rem;
 }
 /*chatbot style*/
-
 .chatbot-toggler {
   position: fixed;
   right: 1rem;
@@ -286,7 +255,6 @@
   z-index: 999;
   overflow: hidden;
 }
-
 .chatbot .header {
   background-color: var(--PRIMARY_RED);
   padding: 1rem 0;
@@ -301,7 +269,6 @@
   overflow-y: auto;
   padding: 2rem 0.5rem;
 }
-
 .chatbox .outgoing {
   justify-content: flex-end;
   margin: 1rem 0;
@@ -313,10 +280,8 @@
   padding: 1rem;
   white-space: pre-wrap;
 }
-
 .chatbox .incoming p {
   background-color: var(--TRANSPARENT_BLACK_60);
-
   border-radius: 1rem 1rem 1rem 0;
 }
 .chatbox .incoming i {
@@ -328,7 +293,6 @@
 
   border-radius: 1rem 1rem 0 1rem;
 }
-
 .chatbot .chat-input {
   border-top: solid 1px var(--PRIMARY_WHITE);
   width: 100%;
@@ -358,7 +322,6 @@
 /************ End of Home Page Styles ************/
 
 /************ Start of Sign in / Sign up Page Styles ************/
-
 .sign-in {
   background-image: url(../images/banner/HomePage.png);
   background-size: cover;
@@ -394,14 +357,12 @@
   font-size: 2rem;
   font-weight: 700;
 }
-
 .form-control input:focus {
   left: 12px;
   top: 4px;
   font-size: 0.8rem;
   color: #b3b3b3;
 }
-
 .sign-btn,
 .form__input input {
   width: 100%;
@@ -447,10 +408,6 @@
 }
 .show-details__row {
   display: flex;
-  /* justify-content: space-between; */
-  /* flex-wrap: wrap; */
-  /* gap:10rem; */
-  /* background-color: tomato; */
 }
 .show-details__rating {
   margin-left: 1rem;
@@ -471,7 +428,6 @@
   align-items: center;
   gap: 2rem;
 }
-
 .show-details__date {
   margin-top: 1rem;
 }
@@ -488,7 +444,6 @@
   color: var(--PRIMARY_WHITE);
 }
 .show-details__overview {
-  /* width: 50%; */
   margin: 2rem 0;
 }
 .show-details__overview h4 {
@@ -497,7 +452,6 @@
 .movie-video {
   height: 50rem;
 }
-
 /***Comments section******/
 .comment__label {
   font-size: 1.5rem;

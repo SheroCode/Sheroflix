@@ -1,4 +1,5 @@
-import { initSwiper,options } from "./swiper.js";
+import { initSwiper, options } from "./swiper.js";
+import { initializeChatbot } from "./chatbot.js";
 // =================== Fetch and Display Movies by Genre ===================
 const GenreSections = document.querySelector("#genre-sections");
 
@@ -221,3 +222,4 @@ async function displayVideo(movieId) {
     movieVideo.innerHTML = `<p>No trailer available.</p>`;
   }
 }
+initializeChatbot();
