@@ -1,6 +1,11 @@
-import { initSwiper, options } from "./swiper.js";
 import { initializeChatbot } from "./chatbot.js";
-
+import {
+  initSwiper,
+  options,
+  handelSearchAnimation,
+  handelSearchLogic,
+  handelLogout,
+} from "./logics.js";
 const GenreSections = document.querySelector("#genre-sections");
 if (GenreSections) {
   async function getGenre() {
@@ -177,4 +182,7 @@ if (reviewForm) {
     });
   }
 }
+handelLogout();
 initializeChatbot();
+handelSearchAnimation();
+handelSearchLogic();

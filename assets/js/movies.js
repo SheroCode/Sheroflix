@@ -1,5 +1,11 @@
-import { initSwiper, options } from "./swiper.js";
 import { initializeChatbot } from "./chatbot.js";
+import {
+  initSwiper,
+  options,
+  handelSearchAnimation,
+  handelSearchLogic,
+  handelLogout,
+} from "./logics.js";
 // =================== Fetch and Display Movies by Genre ===================
 const GenreSections = document.querySelector("#genre-sections");
 
@@ -217,4 +223,7 @@ async function displayVideo(movieId) {
     movieVideo.innerHTML = `<p>No trailer available.</p>`;
   }
 }
+handelLogout();
 initializeChatbot();
+handelSearchAnimation();
+handelSearchLogic();
