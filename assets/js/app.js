@@ -46,7 +46,7 @@ if (trendingWrapper) {
     });
   }
 }
-// fetch   movies
+// fetch movies
 if (movieWrapper) {
   fetch(
     "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",

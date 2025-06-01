@@ -20,11 +20,9 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../assets/css/global.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
-<script src="../assets/js/authGuard.js"></script>
-
+    <script src="../assets/js/authGuard.js"></script>
   </head>
   <body>
-
     <!-- Nav bar -->
     <nav class="navbar home-navbar">
       <div class="container">
@@ -142,31 +140,45 @@
           </div>
         </div>
       </section>
-          <!-- Overlay Div -->
-    <div class="overlay hidden">
-      <div class="details">
-        <figure class="details__image">
-          <img class="details__poster" src="" alt="" />
-          <button class="close-btn">
-            <img src="../assets/images/Buttons/close.png" alt="" />
-          </button>
-        </figure>
-        <div class="details__overview">
-          <div class="details__info">
-            <h3 class="details__type"></h3>
-            <h3 class="details__date"></h3>
-            <button class="plus-btn">
-              <img
-                src="../assets/images/Buttons/Plus.png"
-                alt=""
-                title="Add to list" />
+      <!-- Overlay Div -->
+      <div class="overlay hidden">
+        <div class="details">
+          <figure class="details__image">
+            <img class="details__poster" src="" alt="" />
+            <button class="close-btn">
+              <img src="../assets/images/Buttons/close.png" alt="" />
             </button>
+          </figure>
+          <div class="details__overview">
+            <div class="details__info">
+              <h3 class="details__type"></h3>
+              <h3 class="details__date"></h3>
+              <button class="plus-btn">
+                <img
+                  src="../assets/images/Buttons/Plus.png"
+                  alt=""
+                  title="Add to list" />
+              </button>
+            </div>
+            <p class="details__description"></p>
           </div>
-          <p class="details__description"></p>
         </div>
       </div>
-    </div>
-
+      <!-- Search Results Overlay -->
+      <div class="search-overlay hidden">
+        <div class="container">
+          <div class="search-details">
+            <button class="search__close-btn">
+              <img src="../assets/images/Buttons/close.png" alt="Close" />
+            </button>
+            <div class="search-results-slider swiper">
+              <div class="swiper-wrapper" id="search-results-wrapper"></div>
+              <div class="swiper-button-next custom-next"></div>
+              <div class="swiper-button-prev custom-prev"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Chatbot section -->
       <section class="chatbotsection">
         <button class="chatbot-toggler">
