@@ -28,9 +28,9 @@ if (signupForm) {
       const res = await fetch(
         `https://shereen-auth-api.glitch.me/users?email=${signupEmail}`
       );
-      console.log(res);
+      // console.log(res);
       const existingUser = await res.json();
-      console.log(existingUser);
+      // console.log(existingUser);
 
       if (existingUser.length > 0) {
         messageEl.textContent =
@@ -64,9 +64,7 @@ if (signupForm) {
 }
 
 /////=========Signin Logic===========////////
-
 const signinForm = document.getElementById("signin-form");
-
 if (signinForm) {
   signinForm.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -79,7 +77,6 @@ if (signinForm) {
       messageEl.classList.add("error");
       return;
     }
-    
     try {
       const res = await fetch(
         `https://shereen-auth-api.glitch.me/users?email=${signinEmail}`

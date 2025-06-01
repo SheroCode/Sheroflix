@@ -5,7 +5,9 @@ import {
   handelSearchAnimation,
   handelSearchLogic,
   handelLogout,
+  handleComments,
 } from "./logics.js";
+// =================== Fetch and Display tvshows by Genre ===================
 const GenreSections = document.querySelector("#genre-sections");
 if (GenreSections) {
   async function getGenre() {
@@ -21,7 +23,6 @@ if (GenreSections) {
       `https://api.themoviedb.org/3/discover/tv?&with_genres=${genreId}`,
       options
     );
-
     const data = await res.json();
     return data.results;
   }
@@ -29,27 +30,28 @@ if (GenreSections) {
     const genreSection = document.createElement("section");
     genreSection.classList.add("genre-section");
     genreSection.innerHTML = `
-<h2>${genreName} TV Shows</h2>
-<div class="swiper">
-    <div class="swiper-wrapper">
+    <h2>${genreName} TV Shows</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
         ${tvShows
-          .map((tvShow) => {
-            return `
+          .map(
+            (tvShow) =>
+              `
           <div class="swiper-slide">
-            <img class="swiper-slide__poster" src="https://image.tmdb.org/t/p/original${tvShow.poster_path}" data-id="${tvShow.id}"  alt="${tvShow.name}" />
+            <img class="swiper-slide__poster" data-id="${tvShow.id}"
+            src="https://image.tmdb.org/t/p/original${tvShow.poster_path}"   alt="${tvShow.name}" />
           </div>
-          `;
-          })
+          `
+          )
           .join("")}
     </div>
     <div class="swiper-button-prev custom-prev"></div>
     <div class="swiper-button-next custom-next"></div>
 </div>
   `;
-    document.querySelector("#genre-sections").appendChild(genreSection);
+    GenreSections.appendChild(genreSection);
     initSwiper();
   }
-
   async function fire() {
     const genres = await getGenre();
     for (const genre of genres) {
@@ -59,9 +61,7 @@ if (GenreSections) {
   }
   fire();
 }
-
-/***** Details Page Logic ******/
-
+// =================== Handle Poster Click ===================
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("swiper-slide__poster")) {
     console.log(e.target);
@@ -69,8 +69,8 @@ document.addEventListener("click", function (e) {
     window.location.href = `tvshowdetails.html?id=${tvshowId}`;
   }
 });
+// =================== Details Page ===================//
 const tvShowDetailsSection = document.querySelector(".show-details__row");
-
 async function fetchtvShowDetails(id) {
   const res = await fetch(
     `https://api.themoviedb.org/3/tv/${id}?language=en-US`,
@@ -88,7 +88,9 @@ function rendertvShowDetails(tvshow) {
             </figure>
             <div class="show-details__contents">
               <div class="show-details__header">
-                <a href="" class="hero__btn play-btn flex"
+                <a href="" class="hero__btn play-btn flex" data-id="${
+                  tvshow.id
+                }"
                   ><i class="fa-solid fa-play"></i>Play</a
                 >
                 <h4 class="show-details__rating">
@@ -121,6 +123,7 @@ function rendertvShowDetails(tvshow) {
                   <span>
                     ${tvshow.production_companies
                       .map((p) => p.name)
+                      .slice(0, 3)
                       .join(" , ")}</span
                   >
                 </div>
@@ -131,13 +134,22 @@ function rendertvShowDetails(tvshow) {
               </div>
             </div>
   `;
+  // Attach play button click event after rendering
+  const playBtn = document.querySelector(".play-btn");
+  if (playBtn) {
+    playBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const tvshowId = playBtn.getAttribute("data-id");
+      displayVideo(tvshowId);
+    });
+  }
 }
-
+// =================== Load tvshow Details ===================
 const urlParams = new URLSearchParams(window.location.search);
-const tvShowId = urlParams.get("id");
+const tvshowId = urlParams.get("id");
 
-if (tvShowId && tvShowDetailsSection) {
-  fetchtvShowDetails(tvShowId)
+if (tvshowId && tvShowDetailsSection) {
+  fetchtvShowDetails(tvshowId)
     .then(rendertvShowDetails)
     .catch((err) => {
       tvShowDetailsSection.innerHTML =
@@ -145,44 +157,39 @@ if (tvShowId && tvShowDetailsSection) {
       console.error(err);
     });
 }
-/******  Comment Section (Local Storage)******/
-const reviewForm = document.getElementById("form-comment");
+// =================== Display tvshow Video ===================//
 
-if (reviewForm) {
-  const commentsList = document.querySelector(".comments__list");
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const showId = urlParams.get("id");
-  const storageKey = `comments_${showId}`;
-
-  let list = JSON.parse(localStorage.getItem(storageKey)) || [];
-  renderList(list);
-  reviewForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const textarea = document.getElementById("comment");
-    const userReview = textarea.value.trim();
-    if (userReview != "") {
-      const obj = {
-        id: Date.now(),
-        comment: userReview,
-      };
-      list.push(obj);
-
-      renderList(list);
-      textarea.value = "";
-    }
-  });
-  function renderList(list) {
-    commentsList.innerHTML = "";
-    list.forEach((li) => {
-      const listItem = document.createElement("li");
-      listItem.className = "user-comment";
-      listItem.textContent = li.comment;
-      commentsList.appendChild(listItem);
-    });
+const tvshowVideo = document.querySelector(".tvshow-video");
+async function fetchTvshowVideo(tvshowId) {
+  console.log(tvshowId);
+  const res = await fetch(
+    `https://api.themoviedb.org/3/tv/${tvshowId}/videos?language=en-US`,
+    options
+  );
+  const data = await res.json();
+  return data.results;
+}
+async function displayVideo(tvshowId) {
+  const videos = await fetchTvshowVideo(tvshowId);
+  const trailer = videos.find(
+    (video) => video.type === "Trailer" && video.site === "YouTube"
+  );
+  if (trailer) {
+    tvshowVideo.classList.remove("hidden");
+    tvshowVideo.innerHTML = `
+      <iframe width="100%" height="100%" 
+        src="https://www.youtube.com/embed/${trailer.key}" 
+        frameborder="0" 
+        allowfullscreen>
+      </iframe>
+    `;
+  } else {
+    tvshowVideo.classList.remove("hidden");
+    tvshowVideo.innerHTML = `<p>No trailer available.</p>`;
   }
 }
 handelLogout();
 initializeChatbot();
 handelSearchAnimation();
 handelSearchLogic();
+handleComments();

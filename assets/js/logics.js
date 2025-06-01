@@ -31,7 +31,7 @@ export const options = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZGQxMGQyYjhmNTJiYzBhNTMyMGQ1YzlkODhiZDFmZiIsIm5iZiI6MTU5Mjc1NTkwMS44MjgsInN1YiI6IjVlZWY4NmJkZWQyYWMyMDAzNTlkNGM4NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NT77KLEZLjsgTMnyjJQBWADPa_t_7ydLLbvEABTxbwM",
   },
 };
-//////============= Search Animation Logic ============///// 
+//////============= Search Animation Logic ============/////
 
 export function handelSearchAnimation() {
   const searchIcon = document.getElementById("search-icon");
@@ -118,5 +118,54 @@ export function handelLogout() {
         window.location.href = "../index.html";
       }
     });
+  }
+}
+// =================== Comment Section ===================///
+export function handleComments() {
+  const reviewForm = document.getElementById("form-comment");
+  if (reviewForm) {
+    const commentsList = document.querySelector(".comments__list");
+    const urlParams = new URLSearchParams(window.location.search);
+    const showId = urlParams.get("id");
+    fetchComments(showId);
+    reviewForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const textarea = document.getElementById("comment-textarea");
+      const userReview = textarea.value.trim();
+      if (userReview) {
+        const newComment = {
+          id: Date.now(),
+          showId: showId,
+          comment: userReview,
+        };
+
+        await fetch("https://shereen-auth-api.glitch.me/comments", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newComment),
+        });
+
+        textarea.value = "";
+        fetchComments(showId);
+      }
+    });
+
+    async function fetchComments(showId) {
+      const res = await fetch(
+        `https://shereen-auth-api.glitch.me/comments?showId=${showId}`
+      );
+      const comments = await res.json();
+      renderList(comments);
+    }
+
+    function renderList(list) {
+      commentsList.innerHTML = "";
+      list.forEach((li) => {
+        const listItem = document.createElement("li");
+        listItem.className = "user-comment";
+        listItem.textContent = li.comment;
+        commentsList.appendChild(listItem);
+      });
+    }
   }
 }

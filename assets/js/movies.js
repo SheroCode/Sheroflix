@@ -5,10 +5,10 @@ import {
   handelSearchAnimation,
   handelSearchLogic,
   handelLogout,
+  handleComments,
 } from "./logics.js";
 // =================== Fetch and Display Movies by Genre ===================
 const GenreSections = document.querySelector("#genre-sections");
-
 if (GenreSections) {
   async function getGenres() {
     const res = await fetch(
@@ -18,7 +18,6 @@ if (GenreSections) {
     const data = await res.json();
     return data.genres;
   }
-
   async function fetchListByGenre(genreId) {
     const res = await fetch(
       `https://api.themoviedb.org/3/discover/movie?&with_genres=${genreId}`,
@@ -27,7 +26,6 @@ if (GenreSections) {
     const data = await res.json();
     return data.results;
   }
-
   function displayGenreSection(genreName, movies) {
     const genreSection = document.createElement("section");
     genreSection.classList.add("genre-section");
@@ -54,7 +52,6 @@ if (GenreSections) {
     GenreSections.appendChild(genreSection);
     initSwiper();
   }
-
   async function fire() {
     const genres = await getGenres();
     for (const genre of genres) {
@@ -71,8 +68,7 @@ document.addEventListener("click", function (e) {
     window.location.href = `moviedetails.html?id=${movieId}`;
   }
 });
-
-// =================== Details Page ===================
+// =================== Details Page ===================//
 const movieDetailsSection = document.querySelector(".show-details__row");
 async function fetchMovieDetails(id) {
   const res = await fetch(
@@ -127,7 +123,6 @@ function renderMovieDetails(movie) {
       </div>
     </div>
   `;
-
   // Attach play button click event after rendering
   const playBtn = document.querySelector(".play-btn");
   if (playBtn) {
@@ -153,49 +148,9 @@ if (movieId && movieDetailsSection) {
     });
 }
 
-// =================== Comment Section ===================
-const reviewForm = document.getElementById("form-comment");
+// =================== Display Movie Video ===================//
 
-if (reviewForm) {
-  const commentsList = document.querySelector(".comments__list");
-  const showId = urlParams.get("id");
-  const storageKey = `comments_${showId}`;
-  let list = JSON.parse(localStorage.getItem(storageKey)) || [];
-
-  renderList(list);
-
-  reviewForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const textarea = document.getElementById("comment-textarea");
-    const userReview = textarea.value.trim();
-
-    if (userReview !== "") {
-      const obj = {
-        id: Date.now(),
-        comment: userReview,
-      };
-
-      list.push(obj);
-      localStorage.setItem(storageKey, JSON.stringify(list));
-      renderList(list);
-      textarea.value = "";
-    }
-  });
-
-  function renderList(list) {
-    commentsList.innerHTML = "";
-    list.forEach((li) => {
-      const listItem = document.createElement("li");
-      listItem.className = "user-comment";
-      listItem.textContent = li.comment;
-      commentsList.appendChild(listItem);
-    });
-  }
-}
-
-// =================== Display Movie Video ===================
 const movieVideo = document.querySelector(".movie-video");
-
 async function fetchMovieVideo(movieId) {
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`,
@@ -220,6 +175,7 @@ async function displayVideo(movieId) {
       </iframe>
     `;
   } else {
+    movieVideo.classList.remove("hidden");
     movieVideo.innerHTML = `<p>No trailer available.</p>`;
   }
 }
@@ -227,3 +183,4 @@ handelLogout();
 initializeChatbot();
 handelSearchAnimation();
 handelSearchLogic();
+handleComments();
