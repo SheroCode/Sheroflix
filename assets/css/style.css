@@ -546,9 +546,12 @@
   .hero__contents {
     width: 90%;
   }
-    /*sign up page*/
+  /*sign up page*/
+  .sign-up.container {
+    width: 95%;
+  }
   .sign-up .form-wrapper {
-    width: 90%;
+    width: 100%;
   }
   .sign-up__background {
     width: 100%;
