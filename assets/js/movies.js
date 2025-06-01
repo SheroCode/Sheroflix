@@ -202,7 +202,6 @@ async function fetchMovieVideo(movieId) {
   const data = await res.json();
   return data.results;
 }
-
 async function displayVideo(movieId) {
   const videos = await fetchMovieVideo(movieId);
   const trailer = videos.find(

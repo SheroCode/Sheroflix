@@ -10,7 +10,6 @@ const detailsType = document.querySelector(".details__type");
 const detailsDate = document.querySelector(".details__date");
 const detailsDescription = document.querySelector(".details__description");
 
-
 if (trendingWrapper) {
   // fetch of trending movies
   fetch(
@@ -188,10 +187,8 @@ if (searchInput) {
     const searchOverlay = document.querySelector(".search-overlay");
     if (results.length !== 0 && searchOverlay) {
       searchOverlay.classList.remove("hidden");
-
       const searchWrapper = document.getElementById("search-results-wrapper");
       searchWrapper.innerHTML = "";
-
       results.forEach((ele) => {
         if (ele.poster_path === "" || !ele.poster_path) return;
         let swiperSlide = document.createElement("div");
@@ -223,5 +220,4 @@ if (searchInput) {
     }
   }
 }
-
 initializeChatbot()

@@ -23,6 +23,7 @@
   border-radius: 1rem;
   margin: 20rem auto;
   background-color: var(--TRANSPARENT_BLACK_90);
+
 }
 .details__overview {
   padding: 2rem 1.5rem;
@@ -48,6 +49,12 @@
 }
 .details__image {
   position: relative;
+    background: linear-gradient(
+  to top,
+    rgba(84, 84, 84, 1) 24%,
+    rgba(255, 255, 255, 0) 100%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 .close-btn,
 .search__close-btn {
@@ -146,7 +153,8 @@
   margin: 0.5rem 0;
   color: var(--TRANSPARENT_WHITE_15);
 }
-.footer__ul li a,.footer__questions a {
+.footer__ul li a,
+.footer__questions a {
   color: var(--TRANSPARENT_WHITE_70);
 }
 .footer__questions {
