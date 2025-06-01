@@ -403,9 +403,10 @@
   margin-top: 0.65rem;
   font-size: 1rem;
   color: var(--PRIMARY_RED);
+  font-weight: 600;
 }
 .message.success {
-  color: green;
+  color: rgb(8, 126, 8);
 }
 /************ End of Sign in  / Sign up Page Styles ************/
 
