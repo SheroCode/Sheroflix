@@ -577,6 +577,7 @@
     right: 0;
     bottom: 5;
     border-radius: 0;
+    margin:auto;
   }
   .chatbot .chatbox {
     height: 85%;
