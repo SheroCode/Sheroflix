@@ -23,7 +23,6 @@
   border-radius: 1rem;
   margin: 20rem auto;
   background-color: var(--TRANSPARENT_BLACK_90);
-
 }
 .details__overview {
   padding: 2rem 1.5rem;
@@ -49,8 +48,8 @@
 }
 .details__image {
   position: relative;
-    background: linear-gradient(
-  to top,
+  background: linear-gradient(
+    to top,
     rgba(84, 84, 84, 1) 24%,
     rgba(255, 255, 255, 0) 100%,
     rgba(255, 255, 255, 0) 100%
@@ -479,6 +478,7 @@
 /************ End Details Page Styles ************/
 
 /* ========== Responsive (Mobile) ========== */
+/*********========1440px =========*********/
 @media (max-width: 1440px) {
   /* landing page */
   .reasons__item {
@@ -487,7 +487,15 @@
     height: 13rem;
     margin-bottom: 1rem;
   }
+  /*sign up page*/
+  .sign-up .form-wrapper {
+    width: 90%;
+  }
+  .sign-up__background {
+    width: 80%;
+  }
 }
+/*********========1024px =========*********/
 @media (max-width: 1024px) {
   /* landing page */
   .banner__content {
@@ -497,28 +505,22 @@
   .sign-in .form-wrapper {
     width: 60%;
   }
-  /*sign up page*/
-  .sign-up .form-wrapper {
-    width: 90%;
-  }
-  .sign-up__background {
+}
+/*home page*/
+.home-navbar .row {
+  flex-direction: column;
+}
+.navbar__links {
   width: 100%;
+  margin-bottom: 1rem;
+}
+.navbar__icons {
+  justify-content: space-between;
+  width: 80%;
+  gap: 0.75rem;
+}
 
-}
-  /*home page*/
-  .home-navbar .row {
-    flex-direction: column;
-  }
-  .navbar__links {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  .navbar__icons {
-    justify-content: space-between;
-    width: 80%;
-    gap: 0.75rem;
-  }
-}
+/*********========768px =========*********/
 @media (max-width: 768px) {
   /* landing page */
   .navbar__logo {
@@ -544,7 +546,16 @@
   .hero__contents {
     width: 90%;
   }
+    /*sign up page*/
+  .sign-up .form-wrapper {
+    width: 90%;
+  }
+  .sign-up__background {
+    width: 100%;
+  }
 }
+
+/*********========640px =========*********/
 @media (max-width: 640px) {
   :root {
     font-size: 12px;
