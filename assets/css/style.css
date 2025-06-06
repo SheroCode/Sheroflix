@@ -570,8 +570,7 @@
   .sign-in .form-wrapper {
     width: 100%;
   }
-}
-/*details page*/
+  /*details page*/
 .show-details__row {
   display: flex;
   flex-direction: column;
@@ -583,4 +582,5 @@
 .show-details__contents {
     padding: 0rem;
     width: 100%;
+}
 }
